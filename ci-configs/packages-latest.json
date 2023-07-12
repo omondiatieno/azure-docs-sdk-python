@@ -970,7 +970,8 @@
       "package_info": {
         "name": "azure-storage-blob",
         "install_type": "pypi",
-        "version": "==12.16.0"
+        "version": "==12.17.0",
+        "extra_index_url": "https://pkgs.dev.azure.com/azure-sdk/public/_packaging/azure-sdk-for-python/pypi/simple/"
       },
       "exclude_path": [
         "test*",
@@ -1119,7 +1120,8 @@
         "name": "azure-storage-file-share",
         "install_type": "pypi",
         "prefer_source_distribution": "true",
-        "version": "==12.12.0"
+        "version": "==12.13.0",
+        "extra_index_url": "https://pkgs.dev.azure.com/azure-sdk/public/_packaging/azure-sdk-for-python/pypi/simple/"
       },
       "exclude_path": [
         "test*",
@@ -1230,7 +1232,8 @@
         "name": "azure-storage-file-datalake",
         "install_type": "pypi",
         "prefer_source_distribution": "true",
-        "version": "==12.11.0"
+        "version": "==12.12.0",
+        "extra_index_url": "https://pkgs.dev.azure.com/azure-sdk/public/_packaging/azure-sdk-for-python/pypi/simple/"
       },
       "exclude_path": [
         "test*",
@@ -2874,6 +2877,21 @@
         "install_type": "pypi",
         "prefer_source_distribution": "true",
         "version": "==1.0.0"
+      },
+      "exclude_path": [
+        "test*",
+        "example*",
+        "sample*",
+        "doc*"
+      ]
+    },
+    {
+      "package_info": {
+        "name": "azure-mgmt-loadtestservice",
+        "install_type": "pypi",
+        "prefer_source_distribution": "true",
+        "version": "==1.0.0",
+        "extra_index_url": "https://pkgs.dev.azure.com/azure-sdk/public/_packaging/azure-sdk-for-python/pypi/simple/"
       },
       "exclude_path": [
         "test*",
