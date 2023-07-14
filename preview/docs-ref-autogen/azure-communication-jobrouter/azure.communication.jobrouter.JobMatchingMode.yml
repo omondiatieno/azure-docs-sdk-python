@@ -1,0 +1,65 @@
+### YamlMime:PythonClass
+uid: azure.communication.jobrouter.JobMatchingMode
+name: JobMatchingMode
+fullName: azure.communication.jobrouter.JobMatchingMode
+module: azure.communication.jobrouter
+inheritances:
+- builtins.object
+summary: JobMatchingMode.
+constructor:
+  syntax: 'JobMatchingMode(*, mode_type: str | JobMatchModeType | None = None, queue_and_match_mode:
+    MutableMapping[str, Any] | None = None, schedule_and_suspend_mode: ScheduleAndSuspendMode
+    | None = None, suspend_mode: MutableMapping[str, Any] | None = None)'
+  parameters:
+  - name: mode_type
+    description: 'Known values are: "queueAndMatchMode", "scheduleAndSuspendMode",
+      and
+
+      "suspendMode".'
+    types:
+    - <xref:str>
+    - <xref:azure.communication.jobrouter.models.JobMatchModeType>
+  - name: queue_and_match_mode
+    description: Any object.
+    types:
+    - <xref:JSON>
+  - name: schedule_and_suspend_mode
+    types:
+    - <xref:azure.communication.jobrouter.models.ScheduleAndSuspendMode>
+  - name: suspend_mode
+    description: Any object.
+    types:
+    - <xref:JSON>
+variables:
+- description: 'Known values are: "queueAndMatchMode", "scheduleAndSuspendMode", and
+
+    "suspendMode".'
+  name: mode_type
+  types:
+  - <xref:str>
+  - <xref:azure.communication.jobrouter.models.JobMatchModeType>
+- description: Any object.
+  name: queue_and_match_mode
+  types:
+  - <xref:JSON>
+- name: schedule_and_suspend_mode
+  types:
+  - <xref:azure.communication.jobrouter.models.ScheduleAndSuspendMode>
+- description: Any object.
+  name: suspend_mode
+  types:
+  - <xref:JSON>
+methods:
+- uid: azure.communication.jobrouter.JobMatchingMode.initialize_queue_and_match_mode
+  name: initialize_queue_and_match_mode
+  signature: initialize_queue_and_match_mode() -> JobMatchingMode
+- uid: azure.communication.jobrouter.JobMatchingMode.initialize_schedule_and_suspend_mode
+  name: initialize_schedule_and_suspend_mode
+  signature: 'initialize_schedule_and_suspend_mode(schedule_and_suspend_mode: ScheduleAndSuspendMode)
+    -> JobMatchingMode'
+  parameters:
+  - name: schedule_and_suspend_mode
+    isRequired: true
+- uid: azure.communication.jobrouter.JobMatchingMode.initialize_suspend_mode
+  name: initialize_suspend_mode
+  signature: initialize_suspend_mode() -> JobMatchingMode

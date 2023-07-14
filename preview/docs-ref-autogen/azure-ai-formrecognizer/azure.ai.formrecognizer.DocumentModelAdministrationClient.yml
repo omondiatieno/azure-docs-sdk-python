@@ -294,6 +294,7 @@ methods:
     types:
     - <xref:str>
   return:
+    description: None
     types:
     - <xref:None>
   exceptions:
@@ -310,6 +311,7 @@ methods:
     types:
     - <xref:str>
   return:
+    description: None
     types:
     - <xref:None>
   exceptions:

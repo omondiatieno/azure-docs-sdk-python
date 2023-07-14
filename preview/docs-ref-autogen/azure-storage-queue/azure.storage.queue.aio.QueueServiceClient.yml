@@ -95,6 +95,7 @@ methods:
     types:
     - <xref:int>
   return:
+    description: A QueueClient for the newly created Queue.
     types:
     - <xref:azure.storage.queue.aio.QueueClient>
 - uid: azure.storage.queue.aio.QueueServiceClient.delete_queue
@@ -308,6 +309,3 @@ methods:
     description: The timeout parameter is expressed in seconds.
     types:
     - <xref:int>
-  return:
-    types:
-    - <xref:None>
