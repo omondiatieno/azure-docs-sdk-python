@@ -695,6 +695,8 @@ methods:
     - <xref:int>
   return:
     description: An auto-paging iterable of dict-like DirectoryProperties and FileProperties
+    types:
+    - <xref:Iterable>[<xref:Dict>[<xref:str,str>]]
 - uid: azure.storage.fileshare.ShareClient.set_share_access_policy
   name: set_share_access_policy
   summary: 'Sets the permissions for the share, or stored access
