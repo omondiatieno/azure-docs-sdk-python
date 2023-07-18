@@ -8,7 +8,7 @@ ms.topic: reference
 ms.devlang: python
 ms.service: keyvault
 ---
-# Azure Key Vault Secrets client library for Python - version 4.8.0a20230718001 
+# Azure Key Vault Secrets client library for Python - version 4.8.0a20230718002 
 
 Azure Key Vault helps solve the following problems:
 
