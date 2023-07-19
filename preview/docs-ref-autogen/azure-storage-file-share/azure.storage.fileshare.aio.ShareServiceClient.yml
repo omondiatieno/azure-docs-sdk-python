@@ -127,6 +127,7 @@ methods:
     types:
     - <xref:int>
   return:
+    description: A ShareClient for the newly created Share.
     types:
     - <xref:azure.storage.fileshare.aio.ShareClient>
 - uid: azure.storage.fileshare.aio.ShareServiceClient.delete_share
@@ -302,9 +303,11 @@ methods:
     isRequired: true
     types:
     - <xref:list>(<xref:azure.storage.fileshare.CorsRule>)
-  - name: protocol_settings
+  - name: protocol
     description: Sets protocol settings
     isRequired: true
+    types:
+    - <xref:azure.storage.fileshare.ShareProtocolSettings>
   - name: timeout
     description: 'Sets the server-side timeout for the operation in seconds. For more
       details see
@@ -357,5 +360,6 @@ methods:
     types:
     - <xref:int>
   return:
+    description: A ShareClient for the undeleted Share.
     types:
     - <xref:azure.storage.fileshare.aio.ShareClient>

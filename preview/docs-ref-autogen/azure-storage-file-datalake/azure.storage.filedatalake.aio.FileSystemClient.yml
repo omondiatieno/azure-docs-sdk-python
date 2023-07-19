@@ -728,7 +728,9 @@ methods:
     types:
     - <xref:int>
   return:
-    description: boolean
+    description: True if a file system exists, False otherwise.
+    types:
+    - <xref:bool>
 - uid: azure.storage.filedatalake.aio.FileSystemClient.get_directory_client
   name: get_directory_client
   summary: 'Get a client to interact with the specified directory.
@@ -847,6 +849,11 @@ methods:
     isRequired: true
     types:
     - <xref:str>
+  - name: recursive
+    description: Optional. Set True for recursive, False for iterative.
+    isRequired: true
+    types:
+    - <xref:Optional>[<xref:bool>]
   - name: max_results
     description: 'An optional value that specifies the maximum
 

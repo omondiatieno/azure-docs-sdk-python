@@ -1646,6 +1646,8 @@ methods:
     - <xref:int>
   return:
     description: boolean
+    types:
+    - <xref:bool>
 - uid: azure.storage.blob.aio.BlobClient.get_account_information
   name: get_account_information
   summary: 'Gets information related to the storage account in which the blob resides.

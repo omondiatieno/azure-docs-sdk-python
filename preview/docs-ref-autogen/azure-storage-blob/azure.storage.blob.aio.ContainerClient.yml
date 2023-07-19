@@ -738,6 +738,8 @@ methods:
     - <xref:int>
   return:
     description: boolean
+    types:
+    - <xref:bool>
 - uid: azure.storage.blob.aio.ContainerClient.find_blobs_by_tags
   name: find_blobs_by_tags
   summary: 'Returns a generator to list the blobs under the specified container whose

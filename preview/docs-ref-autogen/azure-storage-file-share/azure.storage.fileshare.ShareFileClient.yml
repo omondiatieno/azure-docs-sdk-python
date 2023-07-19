@@ -724,12 +724,12 @@ methods:
   parameters:
   - name: offset
     description: Specifies the start offset of bytes over which to get ranges.
-    defaultValue: None
+    isRequired: true
     types:
     - <xref:int>
   - name: length
     description: Number of bytes to use over which to get ranges.
-    defaultValue: None
+    isRequired: true
     types:
     - <xref:int>
   - name: previous_sharesnapshot

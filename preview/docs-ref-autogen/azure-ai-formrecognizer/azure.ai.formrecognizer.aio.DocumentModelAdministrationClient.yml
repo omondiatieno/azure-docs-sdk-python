@@ -81,7 +81,7 @@ methods:
     Any) -> AsyncDocumentModelAdministrationLROPoller[DocumentClassifierDetails]'
   parameters:
   - name: doc_types
-    description: Required. Mapping of document types to classify against.
+    description: Mapping of document types to classify against.
     isRequired: true
   - name: classifier_id
     description: 'Unique document classifier name.
@@ -296,6 +296,7 @@ methods:
     types:
     - <xref:str>
   return:
+    description: None
     types:
     - <xref:None>
   exceptions:
@@ -312,6 +313,7 @@ methods:
     types:
     - <xref:str>
   return:
+    description: None
     types:
     - <xref:None>
   exceptions:
