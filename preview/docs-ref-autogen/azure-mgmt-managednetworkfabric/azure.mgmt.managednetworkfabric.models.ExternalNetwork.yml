@@ -5,7 +5,7 @@ fullName: azure.mgmt.managednetworkfabric.models.ExternalNetwork
 module: azure.mgmt.managednetworkfabric.models
 inheritances:
 - azure.mgmt.managednetworkfabric.models._models_py3.ProxyResource
-summary: 'Defines the ExternalNetwork item.
+summary: 'Defines the External Network resource.
 
 
   Variables are only populated by the server, and will be ignored when sending a request.
@@ -14,15 +14,36 @@ summary: 'Defines the ExternalNetwork item.
   All required parameters must be populated in order to send to Azure.'
 constructor:
   syntax: 'ExternalNetwork(*, peering_option: str | _models.PeeringOption, annotation:
-    str | None = None, option_b_properties: _models.OptionBProperties | None = None,
-    option_a_properties: _models.ExternalNetworkPropertiesOptionAProperties | None
-    = None, import_route_policy_id: str | None = None, export_route_policy_id: str
+    str | None = None, import_route_policy_id: str | None = None, export_route_policy_id:
+    str | None = None, import_route_policy: _models.ImportRoutePolicy | None = None,
+    export_route_policy: _models.ExportRoutePolicy | None = None, option_b_properties:
+    _models.L3OptionBProperties | None = None, option_a_properties: _models.ExternalNetworkPropertiesOptionAProperties
     | None = None, **kwargs: Any)'
   parameters:
   - name: annotation
     description: Switch configuration description.
     types:
     - <xref:str>
+  - name: import_route_policy_id
+    description: 'ARM Resource ID of the RoutePolicy. This is used for the
+
+      backward compatibility.'
+    types:
+    - <xref:str>
+  - name: export_route_policy_id
+    description: 'ARM Resource ID of the RoutePolicy. This is used for the
+
+      backward compatibility.'
+    types:
+    - <xref:str>
+  - name: import_route_policy
+    description: Import Route Policy either IPv4 or IPv6.
+    types:
+    - <xref:azure.mgmt.managednetworkfabric.models.ImportRoutePolicy>
+  - name: export_route_policy
+    description: Export Route Policy either IPv4 or IPv6.
+    types:
+    - <xref:azure.mgmt.managednetworkfabric.models.ExportRoutePolicy>
   - name: peering_option
     description: 'Peering option list. Required. Known values are: "OptionA" and
 
@@ -33,23 +54,15 @@ constructor:
   - name: option_b_properties
     description: option B properties object.
     types:
-    - <xref:azure.mgmt.managednetworkfabric.models.OptionBProperties>
+    - <xref:azure.mgmt.managednetworkfabric.models.L3OptionBProperties>
   - name: option_a_properties
     description: option A properties object.
     types:
     - <xref:azure.mgmt.managednetworkfabric.models.ExternalNetworkPropertiesOptionAProperties>
-  - name: import_route_policy_id
-    description: ARM resource ID of importRoutePolicy.
-    types:
-    - <xref:str>
-  - name: export_route_policy_id
-    description: ARM resource ID of exportRoutePolicy.
-    types:
-    - <xref:str>
 variables:
-- description: 'Fully qualified resource ID for the resource. Ex -
+- description: 'Fully qualified resource ID for the resource. E.g.
 
-    /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}.'
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}".'
   name: id
   types:
   - <xref:str>
@@ -74,32 +87,32 @@ variables:
   name: annotation
   types:
   - <xref:str>
+- description: 'ARM Resource ID of the RoutePolicy. This is used for the backward
+
+    compatibility.'
+  name: import_route_policy_id
+  types:
+  - <xref:str>
+- description: 'ARM Resource ID of the RoutePolicy. This is used for the backward
+
+    compatibility.'
+  name: export_route_policy_id
+  types:
+  - <xref:str>
+- description: Import Route Policy either IPv4 or IPv6.
+  name: import_route_policy
+  types:
+  - <xref:azure.mgmt.managednetworkfabric.models.ImportRoutePolicy>
+- description: Export Route Policy either IPv4 or IPv6.
+  name: export_route_policy
+  types:
+  - <xref:azure.mgmt.managednetworkfabric.models.ExportRoutePolicy>
 - description: 'Gets the networkToNetworkInterconnectId of the
 
     resource.'
   name: network_to_network_interconnect_id
   types:
   - <xref:str>
-- description: 'List of resources the externalNetwork is disabled on. Can be
-
-    either entire NetworkFabric or NetworkRack.'
-  name: disabled_on_resources
-  types:
-  - <xref:list>[<xref:str>]
-- description: 'AdministrativeState of the externalNetwork. Example: Enabled |
-
-    Disabled. Known values are: "Enabled" and "Disabled".'
-  name: administrative_state
-  types:
-  - <xref:str>
-  - <xref:azure.mgmt.managednetworkfabric.models.EnabledDisabledState>
-- description: 'Gets the provisioning state of the resource. Known values are:
-
-    "Succeeded", "Updating", "Canceled", "Deleting", and "Failed".'
-  name: provisioning_state
-  types:
-  - <xref:str>
-  - <xref:azure.mgmt.managednetworkfabric.models.ProvisioningState>
 - description: 'Peering option list. Required. Known values are: "OptionA" and "OptionB".'
   name: peering_option
   types:
@@ -108,16 +121,31 @@ variables:
 - description: option B properties object.
   name: option_b_properties
   types:
-  - <xref:azure.mgmt.managednetworkfabric.models.OptionBProperties>
+  - <xref:azure.mgmt.managednetworkfabric.models.L3OptionBProperties>
 - description: option A properties object.
   name: option_a_properties
   types:
   - <xref:azure.mgmt.managednetworkfabric.models.ExternalNetworkPropertiesOptionAProperties>
-- description: ARM resource ID of importRoutePolicy.
-  name: import_route_policy_id
+- description: 'Configuration state of the resource. Known values are: "Succeeded",
+
+    "Failed", "Rejected", "Accepted", "Provisioned", "ErrorProvisioning", "Deprovisioning",
+
+    "Deprovisioned", "ErrorDeprovisioning", and "DeferredControl".'
+  name: configuration_state
   types:
   - <xref:str>
-- description: ARM resource ID of exportRoutePolicy.
-  name: export_route_policy_id
+  - <xref:azure.mgmt.managednetworkfabric.models.ConfigurationState>
+- description: 'Provisioning state of the resource. Known values are: "Accepted",
+
+    "Succeeded", "Updating", "Deleting", "Failed", and "Canceled".'
+  name: provisioning_state
   types:
   - <xref:str>
+  - <xref:azure.mgmt.managednetworkfabric.models.ProvisioningState>
+- description: 'Administrative state of the resource. Known values are: "Enabled",
+
+    "Disabled", "MAT", and "RMA".'
+  name: administrative_state
+  types:
+  - <xref:str>
+  - <xref:azure.mgmt.managednetworkfabric.models.AdministrativeState>

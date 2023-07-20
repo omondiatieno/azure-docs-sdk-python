@@ -4,11 +4,11 @@ name: L2IsolationDomainPatch
 fullName: azure.mgmt.managednetworkfabric.models.L2IsolationDomainPatch
 module: azure.mgmt.managednetworkfabric.models
 inheritances:
-- azure.mgmt.managednetworkfabric._serialization.Model
-summary: The L2IsolationDomain patch resource definition.
+- azure.mgmt.managednetworkfabric.models._models_py3.TagsUpdate
+summary: The L2 Isolation Domain patch resource definition.
 constructor:
   syntax: 'L2IsolationDomainPatch(*, tags: Dict[str, str] | None = None, annotation:
-    str | None = None, mtu: int | None = None, **kwargs: Any)'
+    str | None = None, mtu: int = 1500, **kwargs: Any)'
   parameters:
   - name: tags
     description: Resource tags.
@@ -19,7 +19,7 @@ constructor:
     types:
     - <xref:str>
   - name: mtu
-    description: maximum transmission unit. Default value is 1500.
+    description: Maximum transmission unit. Default value is 1500.
     types:
     - <xref:int>
 variables:
@@ -31,7 +31,7 @@ variables:
   name: annotation
   types:
   - <xref:str>
-- description: maximum transmission unit. Default value is 1500.
+- description: Maximum transmission unit. Default value is 1500.
   name: mtu
   types:
   - <xref:int>

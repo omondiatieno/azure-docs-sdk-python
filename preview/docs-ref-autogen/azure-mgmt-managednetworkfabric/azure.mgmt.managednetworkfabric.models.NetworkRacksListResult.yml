@@ -5,21 +5,21 @@ fullName: azure.mgmt.managednetworkfabric.models.NetworkRacksListResult
 module: azure.mgmt.managednetworkfabric.models
 inheritances:
 - azure.mgmt.managednetworkfabric._serialization.Model
-summary: List of NetworkRacks.
+summary: List of Network Racks.
 constructor:
   syntax: 'NetworkRacksListResult(*, value: List[_models.NetworkRack] | None = None,
     next_link: str | None = None, **kwargs: Any)'
   parameters:
   - name: value
-    description: List of NetworkRack resources.
+    description: List of Network Rack resources.
     types:
-    - <xref:azure.mgmt.managednetworkfabric.aio.operations.ExternalNetworksOperations.list>[<xref:azure.mgmt.managednetworkfabric.models.NetworkRack>]
+    - <xref:azure.mgmt.managednetworkfabric.aio.operations.Operations.list>[<xref:azure.mgmt.managednetworkfabric.models.NetworkRack>]
   - name: next_link
     description: Url to follow for getting next page of resources.
     types:
     - <xref:str>
 variables:
-- description: List of NetworkRack resources.
+- description: List of Network Rack resources.
   name: value
   types:
   - <xref:list>[<xref:azure.mgmt.managednetworkfabric.models.NetworkRack>]

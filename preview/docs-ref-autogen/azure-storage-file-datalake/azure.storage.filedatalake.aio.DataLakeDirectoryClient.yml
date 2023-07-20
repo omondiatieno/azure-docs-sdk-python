@@ -89,7 +89,7 @@ methods:
   parameters:
   - name: metadata
     description: Name-value pairs associated with the directory as metadata.
-    defaultValue: None
+    isRequired: true
     types:
     - <xref:dict>(<xref:str>, <xref:str>)
   - name: content_settings
@@ -419,7 +419,7 @@ methods:
     - <xref:azure.storage.filedatalake.DirectoryProperties>
   - name: metadata
     description: Name-value pairs associated with the file as metadata.
-    defaultValue: None
+    isRequired: true
     types:
     - <xref:dict>(<xref:str>, <xref:str>)
   - name: content_settings
@@ -712,7 +712,9 @@ methods:
     types:
     - <xref:int>
   return:
-    description: boolean
+    description: True if a directory exists, False otherwise.
+    types:
+    - <xref:bool>
 - uid: azure.storage.filedatalake.aio.DataLakeDirectoryClient.get_directory_properties
   name: get_directory_properties
   summary: 'Returns all user-defined metadata, standard HTTP properties, and

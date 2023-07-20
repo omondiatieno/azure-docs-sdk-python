@@ -693,5 +693,6 @@ methods:
     types:
     - <xref:int>
   return:
+    description: The undeleted ContainerClient.
     types:
     - <xref:azure.storage.blob.ContainerClient>

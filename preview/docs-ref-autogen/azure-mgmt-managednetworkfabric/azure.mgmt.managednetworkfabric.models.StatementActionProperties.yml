@@ -10,23 +10,23 @@ summary: 'Route policy action properties.
 
   All required parameters must be populated in order to send to Azure.'
 constructor:
-  syntax: 'StatementActionProperties(*, action_type: str | _models.CommunityActionTypes,
+  syntax: 'StatementActionProperties(*, action_type: str | _models.RoutePolicyActionType,
     local_preference: int | None = None, ip_community_properties: _models.ActionIpCommunityProperties
     | None = None, ip_extended_community_properties: _models.ActionIpExtendedCommunityProperties
     | None = None, **kwargs: Any)'
   parameters:
   - name: local_preference
-    description: localPreference of the route policy.
+    description: Local Preference of the route policy.
     types:
     - <xref:int>
   - name: action_type
-    description: 'action. Example: Permit | Deny. Required. Known values are: "Permit"
-      and
+    description: 'Action type. Example: Permit | Deny | Continue. Required. Known
+      values
 
-      "Deny".'
+      are: "Permit", "Deny", "Continue", and "Continue".'
     types:
     - <xref:str>
-    - <xref:azure.mgmt.managednetworkfabric.models.CommunityActionTypes>
+    - <xref:azure.mgmt.managednetworkfabric.models.RoutePolicyActionType>
   - name: ip_community_properties
     description: IP Community Properties.
     types:
@@ -36,18 +36,18 @@ constructor:
     types:
     - <xref:azure.mgmt.managednetworkfabric.models.ActionIpExtendedCommunityProperties>
 variables:
-- description: localPreference of the route policy.
+- description: Local Preference of the route policy.
   name: local_preference
   types:
   - <xref:int>
-- description: 'action. Example: Permit | Deny. Required. Known values are: "Permit"
-    and
+- description: 'Action type. Example: Permit | Deny | Continue. Required. Known values
+    are:
 
-    "Deny".'
+    "Permit", "Deny", "Continue", and "Continue".'
   name: action_type
   types:
   - <xref:str>
-  - <xref:azure.mgmt.managednetworkfabric.models.CommunityActionTypes>
+  - <xref:azure.mgmt.managednetworkfabric.models.RoutePolicyActionType>
 - description: IP Community Properties.
   name: ip_community_properties
   types:

@@ -17,3 +17,5 @@ fields:
   uid: azure.mgmt.managednetworkfabric.models.Condition.GREATER_THAN_OR_EQUAL_TO
 - name: LESSER_THAN_OR_EQUAL_TO
   uid: azure.mgmt.managednetworkfabric.models.Condition.LESSER_THAN_OR_EQUAL_TO
+- name: RANGE
+  uid: azure.mgmt.managednetworkfabric.models.Condition.RANGE

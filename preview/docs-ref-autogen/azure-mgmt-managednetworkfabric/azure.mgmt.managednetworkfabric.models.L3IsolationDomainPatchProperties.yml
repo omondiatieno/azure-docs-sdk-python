@@ -4,15 +4,16 @@ name: L3IsolationDomainPatchProperties
 fullName: azure.mgmt.managednetworkfabric.models.L3IsolationDomainPatchProperties
 module: azure.mgmt.managednetworkfabric.models
 inheritances:
-- azure.mgmt.managednetworkfabric._serialization.Model
-summary: L3IsolationDomainPatchProperties define the patch resource properties.
+- azure.mgmt.managednetworkfabric.models._models_py3.AnnotationResource
+- azure.mgmt.managednetworkfabric.models._models_py3.L3IsolationDomainPatchableProperties
+summary: Resource properties.
 constructor:
   syntax: 'L3IsolationDomainPatchProperties(*, redistribute_connected_subnets: str
     | _models.RedistributeConnectedSubnets = ''True'', redistribute_static_routes:
     str | _models.RedistributeStaticRoutes = ''False'', aggregate_route_configuration:
-    _models.AggregateRouteConfiguration | None = None, description: str | None = None,
-    connected_subnet_route_policy: _models.L3IsolationDomainPatchPropertiesConnectedSubnetRoutePolicy
-    | None = None, **kwargs: Any)'
+    _models.AggregateRouteConfiguration | None = None, connected_subnet_route_policy:
+    _models.ConnectedSubnetRoutePolicy | None = None, annotation: str | None = None,
+    **kwargs: Any)'
   parameters:
   - name: redistribute_connected_subnets
     description: 'Advertise Connected Subnets. Ex: "True" | "False".
@@ -29,17 +30,17 @@ constructor:
     - <xref:str>
     - <xref:azure.mgmt.managednetworkfabric.models.RedistributeStaticRoutes>
   - name: aggregate_route_configuration
-    description: List of Ipv4 and Ipv6 route configurations.
+    description: Aggregate route configurations.
     types:
     - <xref:azure.mgmt.managednetworkfabric.models.AggregateRouteConfiguration>
-  - name: description
-    description: L3 Isolation Domain description.
-    types:
-    - <xref:str>
   - name: connected_subnet_route_policy
     description: Connected Subnet RoutePolicy.
     types:
-    - <xref:azure.mgmt.managednetworkfabric.models.L3IsolationDomainPatchPropertiesConnectedSubnetRoutePolicy>
+    - <xref:azure.mgmt.managednetworkfabric.models.ConnectedSubnetRoutePolicy>
+  - name: annotation
+    description: Switch configuration description.
+    types:
+    - <xref:str>
 variables:
 - description: 'Advertise Connected Subnets. Ex: "True" | "False". Known
 
@@ -55,15 +56,15 @@ variables:
   types:
   - <xref:str>
   - <xref:azure.mgmt.managednetworkfabric.models.RedistributeStaticRoutes>
-- description: List of Ipv4 and Ipv6 route configurations.
+- description: Aggregate route configurations.
   name: aggregate_route_configuration
   types:
   - <xref:azure.mgmt.managednetworkfabric.models.AggregateRouteConfiguration>
-- description: L3 Isolation Domain description.
-  name: description
-  types:
-  - <xref:str>
 - description: Connected Subnet RoutePolicy.
   name: connected_subnet_route_policy
   types:
-  - <xref:azure.mgmt.managednetworkfabric.models.L3IsolationDomainPatchPropertiesConnectedSubnetRoutePolicy>
+  - <xref:azure.mgmt.managednetworkfabric.models.ConnectedSubnetRoutePolicy>
+- description: Switch configuration description.
+  name: annotation
+  types:
+  - <xref:str>

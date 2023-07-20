@@ -51,7 +51,10 @@ methods:
   signature: get_backoff_time(settings)
   parameters:
   - name: settings
+    description: The configurable values pertaining to the backoff time.
     isRequired: true
+    types:
+    - <xref:Optional>[<xref:Dict>[<xref:str>, <xref:Any>]]
   return:
     description: 'An integer indicating how long to wait before retrying the request,
 

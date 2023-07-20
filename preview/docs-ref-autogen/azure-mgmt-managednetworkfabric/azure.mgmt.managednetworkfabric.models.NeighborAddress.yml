@@ -21,7 +21,12 @@ variables:
   name: address
   types:
   - <xref:str>
-- description: OperationalState of the NeighborAddress.
-  name: operational_state
+- description: 'Configuration state of the resource. Known values are: "Succeeded",
+
+    "Failed", "Rejected", "Accepted", "Provisioned", "ErrorProvisioning", "Deprovisioning",
+
+    "Deprovisioned", "ErrorDeprovisioning", and "DeferredControl".'
+  name: configuration_state
   types:
   - <xref:str>
+  - <xref:azure.mgmt.managednetworkfabric.models.ConfigurationState>

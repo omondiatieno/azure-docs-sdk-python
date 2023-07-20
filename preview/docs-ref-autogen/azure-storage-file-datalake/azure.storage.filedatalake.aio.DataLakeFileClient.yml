@@ -89,7 +89,7 @@ methods:
     isRequired: true
   - name: length
     description: Size of the data in bytes.
-    defaultValue: None
+    isRequired: true
   - name: flush
     description: If true, will commit the data after it is appended.
     types:
@@ -164,14 +164,14 @@ methods:
   parameters:
   - name: content_settings
     description: ContentSettings object used to set path properties.
-    defaultValue: None
+    isRequired: true
     types:
     - <xref:azure.storage.filedatalake.ContentSettings>
   - name: metadata
     description: Name-value pairs associated with the file as metadata.
-    defaultValue: None
+    isRequired: true
     types:
-    - <xref:dict>(<xref:str>, <xref:str>)
+    - <xref:Optional>[<xref:Dict>[<xref:str>, <xref:str>]]
   - name: lease
     description: 'Required if the file has an active lease. Value can be a DataLakeLeaseClient
       object
@@ -404,14 +404,14 @@ methods:
     description: 'Start of byte range to use for downloading a section of the file.
 
       Must be set if length is provided.'
-    defaultValue: None
+    isRequired: true
     types:
     - <xref:int>
   - name: length
     description: 'Number of bytes to read from the stream. This is optional, but
 
       should be supplied for optimal performance.'
-    defaultValue: None
+    isRequired: true
     types:
     - <xref:int>
   - name: lease
@@ -505,7 +505,9 @@ methods:
     types:
     - <xref:int>
   return:
-    description: boolean
+    description: True if a file exists, False otherwise.
+    types:
+    - <xref:bool>
 - uid: azure.storage.filedatalake.aio.DataLakeFileClient.flush_data
   name: flush_data
   summary: Commit the previous appended data.
@@ -531,7 +533,7 @@ methods:
       this optional parameter allows data after the flush position to be
 
       retained for a future flush operation.'
-    defaultValue: 'False'
+    isRequired: true
     types:
     - <xref:bool>
   - name: content_settings
@@ -860,7 +862,7 @@ methods:
     description: 'The time to set the file to expiry.
 
       When expiry_options is RelativeTo*, expires_on should be an int in milliseconds'
-    defaultValue: None
+    isRequired: true
     types:
     - <xref:datetime>
     - <xref:int>
@@ -891,12 +893,12 @@ methods:
     isRequired: true
   - name: length
     description: Size of the data in bytes.
-    defaultValue: None
+    isRequired: true
     types:
     - <xref:int>
   - name: overwrite
     description: to overwrite an existing file or not.
-    defaultValue: 'False'
+    isRequired: true
     types:
     - <xref:bool>
   - name: content_settings
@@ -906,7 +908,7 @@ methods:
   - name: metadata
     description: Name-value pairs associated with the blob as metadata.
     types:
-    - <xref:dict>(<xref:str>, <xref:str>)
+    - <xref:Optional>[<xref:Dict>[<xref:str>, <xref:str>]]
   - name: lease
     description: 'Required if the blob has an active lease. Value can be a DataLakeLeaseClient
       object

@@ -5,7 +5,7 @@ fullName: azure.mgmt.managednetworkfabric.models.StaticRouteProperties
 module: azure.mgmt.managednetworkfabric.models
 inheritances:
 - azure.mgmt.managednetworkfabric._serialization.Model
-summary: 'Static Route properties.
+summary: 'Route Properties.
 
 
   All required parameters must be populated in order to send to Azure.'
@@ -13,19 +13,19 @@ constructor:
   syntax: 'StaticRouteProperties(*, prefix: str, next_hop: List[str], **kwargs: Any)'
   parameters:
   - name: prefix
-    description: IPv4 | IPv6 Prefix. Required.
+    description: Prefix of the route. Required.
     types:
     - <xref:str>
   - name: next_hop
-    description: List of next hop IPv4 | IPv6 addresses. Required.
+    description: List of next hop addresses. Required.
     types:
-    - <xref:azure.mgmt.managednetworkfabric.aio.operations.ExternalNetworksOperations.list>[<xref:str>]
+    - <xref:azure.mgmt.managednetworkfabric.aio.operations.Operations.list>[<xref:str>]
 variables:
-- description: IPv4 | IPv6 Prefix. Required.
+- description: Prefix of the route. Required.
   name: prefix
   types:
   - <xref:str>
-- description: List of next hop IPv4 | IPv6 addresses. Required.
+- description: List of next hop addresses. Required.
   name: next_hop
   types:
   - <xref:list>[<xref:str>]

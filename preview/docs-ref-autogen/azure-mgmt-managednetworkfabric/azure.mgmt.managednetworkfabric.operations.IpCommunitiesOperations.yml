@@ -236,10 +236,10 @@ methods:
   - type: azure.core.exceptions.HttpResponseError
 - uid: azure.mgmt.managednetworkfabric.operations.IpCommunitiesOperations.list_by_resource_group
   name: list_by_resource_group
-  summary: 'List IpCommunities by resource group.
+  summary: 'List IP Communities by resource group.
 
 
-    Implements IpCommunities list by resource group GET method.'
+    Implements IP Communities list by resource group GET method.'
   signature: 'list_by_resource_group(resource_group_name: str, **kwargs: Any) -> Iterable[IpCommunity]'
   parameters:
   - name: resource_group_name
@@ -262,10 +262,10 @@ methods:
   - type: azure.core.exceptions.HttpResponseError
 - uid: azure.mgmt.managednetworkfabric.operations.IpCommunitiesOperations.list_by_subscription
   name: list_by_subscription
-  summary: 'List IpCommunities by subscription.
+  summary: 'List IP Communities by subscription.
 
 
-    Implements IpCommunities list by subscription GET method.'
+    Implements IP Communities list by subscription GET method.'
   signature: 'list_by_subscription(**kwargs: Any) -> Iterable[IpCommunity]'
   parameters:
   - name: cls

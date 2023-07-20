@@ -5,7 +5,7 @@ fullName: azure.mgmt.managednetworkfabric.models.NetworkDevice
 module: azure.mgmt.managednetworkfabric.models
 inheritances:
 - azure.mgmt.managednetworkfabric.models._models_py3.TrackedResource
-summary: 'The NetworkDevice resource definition.
+summary: 'The Network Device resource definition.
 
 
   Variables are only populated by the server, and will be ignored when sending a request.
@@ -15,8 +15,7 @@ summary: 'The NetworkDevice resource definition.
 constructor:
   syntax: 'NetworkDevice(*, location: str, tags: Dict[str, str] | None = None, annotation:
     str | None = None, host_name: str | None = None, serial_number: str | None = None,
-    network_device_sku: str | None = None, network_device_role: str | _models.NetworkDeviceRoleTypes
-    | None = None, **kwargs: Any)'
+    network_device_sku: str | None = None, **kwargs: Any)'
   parameters:
   - name: tags
     description: Resource tags.
@@ -31,30 +30,23 @@ constructor:
     types:
     - <xref:str>
   - name: host_name
-    description: The host Name of the device.
+    description: The host name of the device.
     types:
     - <xref:str>
   - name: serial_number
-    description: 'serialNumber of the format Make;Model;HardwareRevisionId;SerialNumber.
+    description: 'Serial number of the device. Format of serial Number -
 
-      Example: Arista;DCS-7280DR3-24;12.05;JPE21116969.'
+      Make;Model;HardwareRevisionId;SerialNumber.'
     types:
     - <xref:str>
   - name: network_device_sku
     description: Network Device SKU name.
     types:
     - <xref:str>
-  - name: network_device_role
-    description: 'networkDeviceRole is the device role: Example: CE | ToR. Known
-
-      values are: "CE", "ToR", "NPB", "TS", and "Management".'
-    types:
-    - <xref:str>
-    - <xref:azure.mgmt.managednetworkfabric.models.NetworkDeviceRoleTypes>
 variables:
-- description: 'Fully qualified resource ID for the resource. Ex -
+- description: 'Fully qualified resource ID for the resource. E.g.
 
-    /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}.'
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}".'
   name: id
   types:
   - <xref:str>
@@ -87,13 +79,13 @@ variables:
   name: annotation
   types:
   - <xref:str>
-- description: The host Name of the device.
+- description: The host name of the device.
   name: host_name
   types:
   - <xref:str>
-- description: 'serialNumber of the format Make;Model;HardwareRevisionId;SerialNumber.
+- description: 'Serial number of the device. Format of serial Number -
 
-    Example: Arista;DCS-7280DR3-24;12.05;JPE21116969.'
+    Make;Model;HardwareRevisionId;SerialNumber.'
   name: serial_number
   types:
   - <xref:str>
@@ -105,21 +97,45 @@ variables:
   name: network_device_sku
   types:
   - <xref:str>
-- description: 'networkDeviceRole is the device role: Example: CE | ToR. Known
+- description: 'NetworkDeviceRole is the device role: Example: CE | ToR. Known
 
     values are: "CE", "ToR", "NPB", "TS", and "Management".'
   name: network_device_role
   types:
   - <xref:str>
-  - <xref:azure.mgmt.managednetworkfabric.models.NetworkDeviceRoleTypes>
-- description: 'Gets the provisioning state of the resource. Known values are:
-
-    "Succeeded", "Updating", "Canceled", "Deleting", and "Failed".'
-  name: provisioning_state
-  types:
-  - <xref:str>
-  - <xref:azure.mgmt.managednetworkfabric.models.ProvisioningState>
+  - <xref:azure.mgmt.managednetworkfabric.models.NetworkDeviceRole>
 - description: Reference to network rack resource id.
   name: network_rack_id
   types:
   - <xref:str>
+- description: Management IPv4 Address.
+  name: management_ipv4_address
+  types:
+  - <xref:str>
+- description: Management IPv6 Address.
+  name: management_ipv6_address
+  types:
+  - <xref:str>
+- description: 'Configuration state of the resource. Known values are: "Succeeded",
+
+    "Failed", "Rejected", "Accepted", "Provisioned", "ErrorProvisioning", "Deprovisioning",
+
+    "Deprovisioned", "ErrorDeprovisioning", and "DeferredControl".'
+  name: configuration_state
+  types:
+  - <xref:str>
+  - <xref:azure.mgmt.managednetworkfabric.models.ConfigurationState>
+- description: 'Provisioning state of the resource. Known values are: "Accepted",
+
+    "Succeeded", "Updating", "Deleting", "Failed", and "Canceled".'
+  name: provisioning_state
+  types:
+  - <xref:str>
+  - <xref:azure.mgmt.managednetworkfabric.models.ProvisioningState>
+- description: 'Administrative state of the resource. Known values are: "Enabled",
+
+    "Disabled", "MAT", and "RMA".'
+  name: administrative_state
+  types:
+  - <xref:str>
+  - <xref:azure.mgmt.managednetworkfabric.models.AdministrativeState>

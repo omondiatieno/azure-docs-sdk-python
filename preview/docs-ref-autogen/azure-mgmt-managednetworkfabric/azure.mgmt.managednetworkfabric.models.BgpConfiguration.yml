@@ -8,18 +8,15 @@ inheritances:
 summary: 'BGP configuration properties.
 
 
-  Variables are only populated by the server, and will be ignored when sending a request.
-
-
-  All required parameters must be populated in order to send to Azure.'
+  Variables are only populated by the server, and will be ignored when sending a request.'
 constructor:
-  syntax: 'BgpConfiguration(*, peer_asn: int, annotation: str | None = None, bfd_configuration:
-    _models.BfdConfiguration | None = None, default_route_originate: str | _models.BooleanEnumProperty
-    | None = None, allow_as: int = 2, allow_as_override: str | _models.AllowASOverride
-    | None = None, ipv4_listen_range_prefixes: List[str] | None = None, ipv6_listen_range_prefixes:
-    List[str] | None = None, ipv4_neighbor_address: List[_models.NeighborAddress]
-    | None = None, ipv6_neighbor_address: List[_models.NeighborAddress] | None = None,
-    **kwargs: Any)'
+  syntax: 'BgpConfiguration(*, annotation: str | None = None, bfd_configuration: _models.BfdConfiguration
+    | None = None, default_route_originate: str | _models.BooleanEnumProperty | None
+    = None, allow_as: int = 2, allow_as_override: str | _models.AllowASOverride |
+    None = None, peer_asn: int | None = None, ipv4_listen_range_prefixes: List[str]
+    | None = None, ipv6_listen_range_prefixes: List[str] | None = None, ipv4_neighbor_address:
+    List[_models.NeighborAddress] | None = None, ipv6_neighbor_address: List[_models.NeighborAddress]
+    | None = None, **kwargs: Any)'
   parameters:
   - name: annotation
     description: Switch configuration description.
@@ -50,25 +47,25 @@ constructor:
     - <xref:str>
     - <xref:azure.mgmt.managednetworkfabric.models.AllowASOverride>
   - name: peer_asn
-    description: 'Peer ASN. Example: 65047. Required.'
+    description: 'Peer ASN. Example: 65047.'
     types:
     - <xref:int>
   - name: ipv4_listen_range_prefixes
-    description: BGP Ipv4 ListenRange.
+    description: List of BGP IPv4 Listen Range prefixes.
     types:
-    - <xref:azure.mgmt.managednetworkfabric.aio.operations.ExternalNetworksOperations.list>[<xref:str>]
+    - <xref:azure.mgmt.managednetworkfabric.aio.operations.Operations.list>[<xref:str>]
   - name: ipv6_listen_range_prefixes
-    description: BGP Ipv6 ListenRange.
+    description: List of BGP IPv6 Listen Ranges prefixes.
     types:
-    - <xref:azure.mgmt.managednetworkfabric.aio.operations.ExternalNetworksOperations.list>[<xref:str>]
+    - <xref:azure.mgmt.managednetworkfabric.aio.operations.Operations.list>[<xref:str>]
   - name: ipv4_neighbor_address
-    description: List with stringified ipv4NeighborAddresses.
+    description: List with stringified IPv4 Neighbor Addresses.
     types:
-    - <xref:azure.mgmt.managednetworkfabric.aio.operations.ExternalNetworksOperations.list>[<xref:azure.mgmt.managednetworkfabric.models.NeighborAddress>]
+    - <xref:azure.mgmt.managednetworkfabric.aio.operations.Operations.list>[<xref:azure.mgmt.managednetworkfabric.models.NeighborAddress>]
   - name: ipv6_neighbor_address
     description: List with stringified IPv6 Neighbor Address.
     types:
-    - <xref:azure.mgmt.managednetworkfabric.aio.operations.ExternalNetworksOperations.list>[<xref:azure.mgmt.managednetworkfabric.models.NeighborAddress>]
+    - <xref:azure.mgmt.managednetworkfabric.aio.operations.Operations.list>[<xref:azure.mgmt.managednetworkfabric.models.NeighborAddress>]
 variables:
 - description: Switch configuration description.
   name: annotation
@@ -101,19 +98,19 @@ variables:
   name: fabric_asn
   types:
   - <xref:int>
-- description: 'Peer ASN. Example: 65047. Required.'
+- description: 'Peer ASN. Example: 65047.'
   name: peer_asn
   types:
   - <xref:int>
-- description: BGP Ipv4 ListenRange.
+- description: List of BGP IPv4 Listen Range prefixes.
   name: ipv4_listen_range_prefixes
   types:
   - <xref:list>[<xref:str>]
-- description: BGP Ipv6 ListenRange.
+- description: List of BGP IPv6 Listen Ranges prefixes.
   name: ipv6_listen_range_prefixes
   types:
   - <xref:list>[<xref:str>]
-- description: List with stringified ipv4NeighborAddresses.
+- description: List with stringified IPv4 Neighbor Addresses.
   name: ipv4_neighbor_address
   types:
   - <xref:list>[<xref:azure.mgmt.managednetworkfabric.models.NeighborAddress>]

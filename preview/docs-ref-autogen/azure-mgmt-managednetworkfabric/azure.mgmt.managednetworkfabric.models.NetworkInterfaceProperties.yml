@@ -5,7 +5,7 @@ fullName: azure.mgmt.managednetworkfabric.models.NetworkInterfaceProperties
 module: azure.mgmt.managednetworkfabric.models
 inheritances:
 - azure.mgmt.managednetworkfabric.models._models_py3.AnnotationResource
-summary: 'NetworkInterfaceProperties define the resource properties.
+summary: 'Network Interface Properties defines the properties of the resource.
 
 
   Variables are only populated by the server, and will be ignored when sending a request.'
@@ -22,25 +22,11 @@ variables:
   name: annotation
   types:
   - <xref:str>
-- description: physicalIdentifier of the network interface.
+- description: Physical Identifier of the network interface.
   name: physical_identifier
   types:
   - <xref:str>
-- description: 'administrativeState of the network interface. Example: Enabled |
-
-    Disabled. Known values are: "Enabled" and "Disabled".'
-  name: administrative_state
-  types:
-  - <xref:str>
-  - <xref:azure.mgmt.managednetworkfabric.models.EnabledDisabledState>
-- description: 'Gets the provisioning state of the resource. Known values are:
-
-    "Succeeded", "Updating", "Canceled", "Deleting", and "Failed".'
-  name: provisioning_state
-  types:
-  - <xref:str>
-  - <xref:azure.mgmt.managednetworkfabric.models.ProvisioningState>
-- description: The arm resource id of the interface or compute server its connected
+- description: The ARM resource id of the interface or compute server its connected
     to.
   name: connected_to
   types:
@@ -52,11 +38,25 @@ variables:
   types:
   - <xref:str>
   - <xref:azure.mgmt.managednetworkfabric.models.InterfaceType>
-- description: ipv4Address.
+- description: IPv4Address of the interface.
   name: ipv4_address
   types:
   - <xref:str>
-- description: ipv6Address.
+- description: IPv6Address of the interface.
   name: ipv6_address
   types:
   - <xref:str>
+- description: 'Provisioning state of the resource. Known values are: "Accepted",
+
+    "Succeeded", "Updating", "Deleting", "Failed", and "Canceled".'
+  name: provisioning_state
+  types:
+  - <xref:str>
+  - <xref:azure.mgmt.managednetworkfabric.models.ProvisioningState>
+- description: 'Administrative state of the resource. Known values are: "Enabled",
+
+    "Disabled", "MAT", and "RMA".'
+  name: administrative_state
+  types:
+  - <xref:str>
+  - <xref:azure.mgmt.managednetworkfabric.models.AdministrativeState>

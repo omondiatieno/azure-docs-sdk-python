@@ -131,6 +131,7 @@ methods:
     types:
     - <xref:int>
   return:
+    description: A ShareClient for the newly created Share.
     types:
     - <xref:azure.storage.fileshare.ShareClient>
 - uid: azure.storage.fileshare.ShareServiceClient.delete_share
@@ -401,5 +402,6 @@ methods:
     types:
     - <xref:int>
   return:
+    description: A ShareClient for the undeleted Share.
     types:
     - <xref:azure.storage.fileshare.ShareClient>

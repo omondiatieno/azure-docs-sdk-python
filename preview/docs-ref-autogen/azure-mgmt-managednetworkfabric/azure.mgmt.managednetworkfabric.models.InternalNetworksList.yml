@@ -5,21 +5,21 @@ fullName: azure.mgmt.managednetworkfabric.models.InternalNetworksList
 module: azure.mgmt.managednetworkfabric.models
 inheritances:
 - azure.mgmt.managednetworkfabric._serialization.Model
-summary: List of InternalNetworks.
+summary: List of Internal Networks.
 constructor:
   syntax: 'InternalNetworksList(*, value: List[_models.InternalNetwork] | None = None,
     next_link: str | None = None, **kwargs: Any)'
   parameters:
   - name: value
-    description: List of InternalNetworks resources.
+    description: List of Internal Network resources.
     types:
-    - <xref:azure.mgmt.managednetworkfabric.aio.operations.ExternalNetworksOperations.list>[<xref:azure.mgmt.managednetworkfabric.models.InternalNetwork>]
+    - <xref:azure.mgmt.managednetworkfabric.aio.operations.Operations.list>[<xref:azure.mgmt.managednetworkfabric.models.InternalNetwork>]
   - name: next_link
     description: Url to follow for getting next page of resources.
     types:
     - <xref:str>
 variables:
-- description: List of InternalNetworks resources.
+- description: List of Internal Network resources.
   name: value
   types:
   - <xref:list>[<xref:azure.mgmt.managednetworkfabric.models.InternalNetwork>]

@@ -13,8 +13,10 @@ summary: 'The RoutePolicy resource definition.
 
   All required parameters must be populated in order to send to Azure.'
 constructor:
-  syntax: 'RoutePolicy(*, location: str, statements: List[_models.RoutePolicyStatementProperties],
-    tags: Dict[str, str] | None = None, annotation: str | None = None, **kwargs: Any)'
+  syntax: 'RoutePolicy(*, location: str, network_fabric_id: str, tags: Dict[str, str]
+    | None = None, annotation: str | None = None, statements: List[_models.RoutePolicyStatementProperties]
+    | None = None, address_family_type: str | _models.AddressFamilyType = ''IPv4'',
+    **kwargs: Any)'
   parameters:
   - name: tags
     description: Resource tags.
@@ -29,13 +31,24 @@ constructor:
     types:
     - <xref:str>
   - name: statements
-    description: Route Policy statements. Required.
+    description: Route Policy statements.
     types:
-    - <xref:azure.mgmt.managednetworkfabric.aio.operations.ExternalNetworksOperations.list>[<xref:azure.mgmt.managednetworkfabric.models.RoutePolicyStatementProperties>]
-variables:
-- description: 'Fully qualified resource ID for the resource. Ex -
+    - <xref:azure.mgmt.managednetworkfabric.aio.operations.Operations.list>[<xref:azure.mgmt.managednetworkfabric.models.RoutePolicyStatementProperties>]
+  - name: network_fabric_id
+    description: Arm Resource ID of Network Fabric. Required.
+    types:
+    - <xref:str>
+  - name: address_family_type
+    description: 'AddressFamilyType. This parameter decides whether the given ipv4
 
-    /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}.'
+      or ipv6 route policy. Known values are: "IPv4" and "IPv6".'
+    types:
+    - <xref:str>
+    - <xref:azure.mgmt.managednetworkfabric.models.AddressFamilyType>
+variables:
+- description: 'Fully qualified resource ID for the resource. E.g.
+
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}".'
   name: id
   types:
   - <xref:str>
@@ -68,14 +81,41 @@ variables:
   name: annotation
   types:
   - <xref:str>
-- description: Route Policy statements. Required.
+- description: Route Policy statements.
   name: statements
   types:
   - <xref:list>[<xref:azure.mgmt.managednetworkfabric.models.RoutePolicyStatementProperties>]
-- description: 'Gets the provisioning state of the resource. Known values are:
+- description: Arm Resource ID of Network Fabric. Required.
+  name: network_fabric_id
+  types:
+  - <xref:str>
+- description: 'AddressFamilyType. This parameter decides whether the given ipv4 or
 
-    "Succeeded", "Updating", "Canceled", "Deleting", and "Failed".'
+    ipv6 route policy. Known values are: "IPv4" and "IPv6".'
+  name: address_family_type
+  types:
+  - <xref:str>
+  - <xref:azure.mgmt.managednetworkfabric.models.AddressFamilyType>
+- description: 'Configuration state of the resource. Known values are: "Succeeded",
+
+    "Failed", "Rejected", "Accepted", "Provisioned", "ErrorProvisioning", "Deprovisioning",
+
+    "Deprovisioned", "ErrorDeprovisioning", and "DeferredControl".'
+  name: configuration_state
+  types:
+  - <xref:str>
+  - <xref:azure.mgmt.managednetworkfabric.models.ConfigurationState>
+- description: 'Provisioning state of the resource. Known values are: "Accepted",
+
+    "Succeeded", "Updating", "Deleting", "Failed", and "Canceled".'
   name: provisioning_state
   types:
   - <xref:str>
   - <xref:azure.mgmt.managednetworkfabric.models.ProvisioningState>
+- description: 'Administrative state of the resource. Known values are: "Enabled",
+
+    "Disabled", "MAT", and "RMA".'
+  name: administrative_state
+  types:
+  - <xref:str>
+  - <xref:azure.mgmt.managednetworkfabric.models.AdministrativeState>
