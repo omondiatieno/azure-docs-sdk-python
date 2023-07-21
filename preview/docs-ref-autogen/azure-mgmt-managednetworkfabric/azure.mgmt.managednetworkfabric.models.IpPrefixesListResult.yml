@@ -5,21 +5,21 @@ fullName: azure.mgmt.managednetworkfabric.models.IpPrefixesListResult
 module: azure.mgmt.managednetworkfabric.models
 inheritances:
 - azure.mgmt.managednetworkfabric._serialization.Model
-summary: List of IpPrefixes.
+summary: List of IP Prefixes.
 constructor:
   syntax: 'IpPrefixesListResult(*, value: List[_models.IpPrefix] | None = None, next_link:
     str | None = None, **kwargs: Any)'
   parameters:
   - name: value
-    description: List of IPPrefix resources.
+    description: List of IP Prefix resources.
     types:
-    - <xref:azure.mgmt.managednetworkfabric.aio.operations.ExternalNetworksOperations.list>[<xref:azure.mgmt.managednetworkfabric.models.IpPrefix>]
+    - <xref:azure.mgmt.managednetworkfabric.aio.operations.Operations.list>[<xref:azure.mgmt.managednetworkfabric.models.IpPrefix>]
   - name: next_link
     description: Url to follow for getting next page of resources.
     types:
     - <xref:str>
 variables:
-- description: List of IPPrefix resources.
+- description: List of IP Prefix resources.
   name: value
   types:
   - <xref:list>[<xref:azure.mgmt.managednetworkfabric.models.IpPrefix>]

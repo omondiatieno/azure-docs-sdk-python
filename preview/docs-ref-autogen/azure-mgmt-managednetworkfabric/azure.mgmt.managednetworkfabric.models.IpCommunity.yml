@@ -5,7 +5,7 @@ fullName: azure.mgmt.managednetworkfabric.models.IpCommunity
 module: azure.mgmt.managednetworkfabric.models
 inheritances:
 - azure.mgmt.managednetworkfabric.models._models_py3.TrackedResource
-summary: 'The IpCommunity resource definition.
+summary: 'The IP Community resource definition.
 
 
   Variables are only populated by the server, and will be ignored when sending a request.
@@ -14,9 +14,8 @@ summary: 'The IpCommunity resource definition.
   All required parameters must be populated in order to send to Azure.'
 constructor:
   syntax: 'IpCommunity(*, location: str, tags: Dict[str, str] | None = None, annotation:
-    str | None = None, action: str | _models.CommunityActionTypes | None = None, well_known_communities:
-    List[str | _models.WellKnownCommunities] | None = None, community_members: List[str]
-    | None = None, **kwargs: Any)'
+    str | None = None, ip_community_rules: List[_models.IpCommunityRule] | None =
+    None, **kwargs: Any)'
   parameters:
   - name: tags
     description: Resource tags.
@@ -30,27 +29,14 @@ constructor:
     description: Switch configuration description.
     types:
     - <xref:str>
-  - name: action
-    description: 'Action to be taken on the configuration. Example: Permit | Deny.
-      Known values
-
-      are: "Permit" and "Deny".'
+  - name: ip_community_rules
+    description: List of IP Community Rules.
     types:
-    - <xref:str>
-    - <xref:azure.mgmt.managednetworkfabric.models.CommunityActionTypes>
-  - name: well_known_communities
-    description: Supported well known Community List.
-    types:
-    - <xref:azure.mgmt.managednetworkfabric.aio.operations.ExternalNetworksOperations.list>[<xref:str>
-    - <xref:azure.mgmt.managednetworkfabric.models.WellKnownCommunities>]
-  - name: community_members
-    description: List the communityMembers of IP Community .
-    types:
-    - <xref:azure.mgmt.managednetworkfabric.aio.operations.ExternalNetworksOperations.list>[<xref:str>]
+    - <xref:azure.mgmt.managednetworkfabric.aio.operations.Operations.list>[<xref:azure.mgmt.managednetworkfabric.models.IpCommunityRule>]
 variables:
-- description: 'Fully qualified resource ID for the resource. Ex -
+- description: 'Fully qualified resource ID for the resource. E.g.
 
-    /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}.'
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}".'
   name: id
   types:
   - <xref:str>
@@ -83,27 +69,30 @@ variables:
   name: annotation
   types:
   - <xref:str>
-- description: 'Action to be taken on the configuration. Example: Permit | Deny. Known
-    values
+- description: List of IP Community Rules.
+  name: ip_community_rules
+  types:
+  - <xref:list>[<xref:azure.mgmt.managednetworkfabric.models.IpCommunityRule>]
+- description: 'Configuration state of the resource. Known values are: "Succeeded",
 
-    are: "Permit" and "Deny".'
-  name: action
+    "Failed", "Rejected", "Accepted", "Provisioned", "ErrorProvisioning", "Deprovisioning",
+
+    "Deprovisioned", "ErrorDeprovisioning", and "DeferredControl".'
+  name: configuration_state
   types:
   - <xref:str>
-  - <xref:azure.mgmt.managednetworkfabric.models.CommunityActionTypes>
-- description: Supported well known Community List.
-  name: well_known_communities
-  types:
-  - <xref:list>[<xref:str>
-  - <xref:azure.mgmt.managednetworkfabric.models.WellKnownCommunities>]
-- description: List the communityMembers of IP Community .
-  name: community_members
-  types:
-  - <xref:list>[<xref:str>]
-- description: 'Gets the provisioning state of the resource. Known values are:
+  - <xref:azure.mgmt.managednetworkfabric.models.ConfigurationState>
+- description: 'Provisioning state of the resource. Known values are: "Accepted",
 
-    "Succeeded", "Updating", "Canceled", "Deleting", and "Failed".'
+    "Succeeded", "Updating", "Deleting", "Failed", and "Canceled".'
   name: provisioning_state
   types:
   - <xref:str>
   - <xref:azure.mgmt.managednetworkfabric.models.ProvisioningState>
+- description: 'Administrative state of the resource. Known values are: "Enabled",
+
+    "Disabled", "MAT", and "RMA".'
+  name: administrative_state
+  types:
+  - <xref:str>
+  - <xref:azure.mgmt.managednetworkfabric.models.AdministrativeState>

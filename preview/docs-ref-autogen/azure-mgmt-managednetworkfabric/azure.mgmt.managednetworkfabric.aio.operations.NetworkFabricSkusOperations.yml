@@ -16,11 +16,11 @@ methods:
   summary: 'Gets a Network Fabric Sku.
 
 
-    Implements Network Fabric Sku GET method.'
+    Implements Network Fabric SKU GET method.'
   signature: 'async get(network_fabric_sku_name: str, **kwargs: Any) -> NetworkFabricSku'
   parameters:
   - name: network_fabric_sku_name
-    description: Name of the Network Fabric Sku. Required.
+    description: Name of the Network Fabric SKU. Required.
     isRequired: true
     types:
     - <xref:str>
@@ -36,10 +36,10 @@ methods:
   - type: azure.core.exceptions.HttpResponseError
 - uid: azure.mgmt.managednetworkfabric.aio.operations.NetworkFabricSkusOperations.list_by_subscription
   name: list_by_subscription
-  summary: 'List NetworkFabricSkus by subscription.
+  summary: 'List Network Fabric SKUs by subscription.
 
 
-    Implements NetworkFabricSkus list by subscription GET method.'
+    Implements Network Fabric SKUs list by subscription GET method.'
   signature: 'list_by_subscription(**kwargs: Any) -> AsyncIterable[NetworkFabricSku]'
   parameters:
   - name: cls

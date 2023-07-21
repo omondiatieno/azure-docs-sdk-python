@@ -5,7 +5,7 @@ fullName: azure.mgmt.managednetworkfabric.models.L2IsolationDomain
 module: azure.mgmt.managednetworkfabric.models
 inheritances:
 - azure.mgmt.managednetworkfabric.models._models_py3.TrackedResource
-summary: 'The L2IsolationDomain resource definition.
+summary: 'The L2 Isolation Domain resource definition.
 
 
   Variables are only populated by the server, and will be ignored when sending a request.
@@ -13,9 +13,9 @@ summary: 'The L2IsolationDomain resource definition.
 
   All required parameters must be populated in order to send to Azure.'
 constructor:
-  syntax: 'L2IsolationDomain(*, location: str, tags: Dict[str, str] | None = None,
-    annotation: str | None = None, network_fabric_id: str | None = None, vlan_id:
-    int | None = None, mtu: int | None = None, **kwargs: Any)'
+  syntax: 'L2IsolationDomain(*, location: str, network_fabric_id: str, vlan_id: int,
+    tags: Dict[str, str] | None = None, annotation: str | None = None, mtu: int =
+    1500, **kwargs: Any)'
   parameters:
   - name: tags
     description: Resource tags.
@@ -30,21 +30,21 @@ constructor:
     types:
     - <xref:str>
   - name: network_fabric_id
-    description: Network Fabric ARM resource id.
+    description: ARM Resource ID of the Network Fabric. Required.
     types:
     - <xref:str>
   - name: vlan_id
-    description: 'vlanId. Example: 501.'
+    description: 'Vlan Identifier of the Network Fabric. Example: 501. Required.'
     types:
     - <xref:int>
   - name: mtu
-    description: maximum transmission unit. Default value is 1500.
+    description: Maximum transmission unit. Default value is 1500.
     types:
     - <xref:int>
 variables:
-- description: 'Fully qualified resource ID for the resource. Ex -
+- description: 'Fully qualified resource ID for the resource. E.g.
 
-    /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}.'
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}".'
   name: id
   types:
   - <xref:str>
@@ -77,41 +77,38 @@ variables:
   name: annotation
   types:
   - <xref:str>
-- description: Network Fabric ARM resource id.
+- description: ARM Resource ID of the Network Fabric. Required.
   name: network_fabric_id
   types:
   - <xref:str>
-- description: 'vlanId. Example: 501.'
+- description: 'Vlan Identifier of the Network Fabric. Example: 501. Required.'
   name: vlan_id
   types:
   - <xref:int>
-- description: maximum transmission unit. Default value is 1500.
+- description: Maximum transmission unit. Default value is 1500.
   name: mtu
   types:
   - <xref:int>
-- description: 'List of resources the L2 Isolation Domain is disabled on. Can be
+- description: 'Configuration state of the resource. Known values are: "Succeeded",
 
-    either entire NetworkFabric or NetworkRack.'
-  name: disabled_on_resources
-  types:
-  - <xref:list>[<xref:str>]
-- description: 'state. Example: Enabled | Disabled. It indicates administrative
+    "Failed", "Rejected", "Accepted", "Provisioned", "ErrorProvisioning", "Deprovisioning",
 
-    state of the isolationDomain, whether it is enabled or disabled. If enabled, the
-    configuration
-
-    is applied on the devices. If disabled, the configuration is removed from the
-    devices. Known
-
-    values are: "Enabled" and "Disabled".'
-  name: administrative_state
+    "Deprovisioned", "ErrorDeprovisioning", and "DeferredControl".'
+  name: configuration_state
   types:
   - <xref:str>
-  - <xref:azure.mgmt.managednetworkfabric.models.EnabledDisabledState>
-- description: 'Gets the provisioning state of the resource. Known values are:
+  - <xref:azure.mgmt.managednetworkfabric.models.ConfigurationState>
+- description: 'Provisioning state of the resource. Known values are: "Accepted",
 
-    "Succeeded", "Updating", "Canceled", "Deleting", and "Failed".'
+    "Succeeded", "Updating", "Deleting", "Failed", and "Canceled".'
   name: provisioning_state
   types:
   - <xref:str>
   - <xref:azure.mgmt.managednetworkfabric.models.ProvisioningState>
+- description: 'Administrative state of the resource. Known values are: "Enabled",
+
+    "Disabled", "MAT", and "RMA".'
+  name: administrative_state
+  types:
+  - <xref:str>
+  - <xref:azure.mgmt.managednetworkfabric.models.AdministrativeState>

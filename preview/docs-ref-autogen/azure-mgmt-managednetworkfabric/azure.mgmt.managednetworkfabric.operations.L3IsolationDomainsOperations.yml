@@ -11,15 +11,14 @@ summary: "> [!WARNING]\n> DO NOT instantiate this class directly.\n>\n> \n>\n> I
 constructor:
   syntax: L3IsolationDomainsOperations(*args, **kwargs)
 methods:
-- uid: azure.mgmt.managednetworkfabric.operations.L3IsolationDomainsOperations.begin_clear_arp_table
-  name: begin_clear_arp_table
-  summary: 'executes clear ARP operation to the underlying resources.
+- uid: azure.mgmt.managednetworkfabric.operations.L3IsolationDomainsOperations.begin_commit_configuration
+  name: begin_commit_configuration
+  summary: 'Execute the commit on the resources.
 
 
-    Clears ARP tables for this Isolation Domain.'
-  signature: 'begin_clear_arp_table(resource_group_name: str, l3_isolation_domain_name:
-    str, body: _models.EnableDisableOnResources, *, content_type: str = ''application/json'',
-    **kwargs: Any) -> LROPoller[None]'
+    Commits the configuration of the given resources.'
+  signature: 'begin_commit_configuration(resource_group_name: str, l3_isolation_domain_name:
+    str, **kwargs: Any) -> LROPoller[CommonPostActionResponseForStateUpdate]'
   parameters:
   - name: resource_group_name
     description: 'The name of the resource group. The name is case insensitive.
@@ -29,21 +28,8 @@ methods:
     types:
     - <xref:str>
   - name: l3_isolation_domain_name
-    description: Name of the L3IsolationDomain. Required.
+    description: Name of the L3 Isolation Domain. Required.
     isRequired: true
-    types:
-    - <xref:str>
-  - name: body
-    description: Request payload. Is either a EnableDisableOnResources type or a IO
-      type. Required.
-    isRequired: true
-    types:
-    - <xref:azure.mgmt.managednetworkfabric.models.EnableDisableOnResources>
-    - <xref:IO>
-  - name: content_type
-    description: 'Body Parameter content-type. Known values are: ''application/json''.
-
-      Default value is None.'
     types:
     - <xref:str>
   - name: cls
@@ -72,77 +58,12 @@ methods:
     types:
     - <xref:int>
   return:
-    description: An instance of LROPoller that returns either None or the result of
-      cls(response)
-    types:
-    - <xref:azure.core.polling.LROPoller>[<xref:None>]
-  exceptions:
-  - type: azure.core.exceptions.HttpResponseError
-- uid: azure.mgmt.managednetworkfabric.operations.L3IsolationDomainsOperations.begin_clear_neighbor_table
-  name: begin_clear_neighbor_table
-  summary: 'executes ipv6 clear neighbor tables operation to the underlying resources.
+    description: 'An instance of LROPoller that returns either CommonPostActionResponseForStateUpdate
+      or
 
-
-    Clears IPv6 neighbor tables for this Isolation Domain.'
-  signature: 'begin_clear_neighbor_table(resource_group_name: str, l3_isolation_domain_name:
-    str, body: _models.EnableDisableOnResources, *, content_type: str = ''application/json'',
-    **kwargs: Any) -> LROPoller[None]'
-  parameters:
-  - name: resource_group_name
-    description: 'The name of the resource group. The name is case insensitive.
-
-      Required.'
-    isRequired: true
+      the result of cls(response)'
     types:
-    - <xref:str>
-  - name: l3_isolation_domain_name
-    description: Name of the L3IsolationDomain. Required.
-    isRequired: true
-    types:
-    - <xref:str>
-  - name: body
-    description: Request payload. Is either a EnableDisableOnResources type or a IO
-      type. Required.
-    isRequired: true
-    types:
-    - <xref:azure.mgmt.managednetworkfabric.models.EnableDisableOnResources>
-    - <xref:IO>
-  - name: content_type
-    description: 'Body Parameter content-type. Known values are: ''application/json''.
-
-      Default value is None.'
-    types:
-    - <xref:str>
-  - name: cls
-    description: A custom type or function that will be passed the direct response
-    types:
-    - <xref:callable>
-  - name: continuation_token
-    description: A continuation token to restart a poller from a saved state.
-    types:
-    - <xref:str>
-  - name: polling
-    description: 'By default, your polling method will be ARMPolling. Pass in False
-      for this
-
-      operation to not poll, or pass in your own initialized polling object for a
-      personal polling
-
-      strategy.'
-    types:
-    - <xref:bool>
-    - <xref:azure.core.polling.PollingMethod>
-  - name: polling_interval
-    description: 'Default waiting time between two polls for LRO operations if no
-
-      Retry-After header is present.'
-    types:
-    - <xref:int>
-  return:
-    description: An instance of LROPoller that returns either None or the result of
-      cls(response)
-    types:
-    - <xref:azure.core.polling.LROPoller>[<xref:None>]
+    - <xref:azure.core.polling.LROPoller>[<xref:azure.mgmt.managednetworkfabric.models.CommonPostActionResponseForStateUpdate>]
   exceptions:
   - type: azure.core.exceptions.HttpResponseError
 - uid: azure.mgmt.managednetworkfabric.operations.L3IsolationDomainsOperations.begin_create
@@ -353,7 +274,7 @@ methods:
     Enables racks for this Isolation Domain.'
   signature: 'begin_update_administrative_state(resource_group_name: str, l3_isolation_domain_name:
     str, body: _models.UpdateAdministrativeState, *, content_type: str = ''application/json'',
-    **kwargs: Any) -> LROPoller[None]'
+    **kwargs: Any) -> LROPoller[_models.CommonPostActionResponseForDeviceUpdate]'
   parameters:
   - name: resource_group_name
     description: 'The name of the resource group. The name is case insensitive.
@@ -363,7 +284,7 @@ methods:
     types:
     - <xref:str>
   - name: l3_isolation_domain_name
-    description: Name of the L3IsolationDomain. Required.
+    description: Name of the L3 Isolation Domain. Required.
     isRequired: true
     types:
     - <xref:str>
@@ -408,24 +329,18 @@ methods:
     types:
     - <xref:int>
   return:
-    description: An instance of LROPoller that returns either None or the result of
-      cls(response)
+    description: 'An instance of LROPoller that returns either CommonPostActionResponseForDeviceUpdate
+
+      or the result of cls(response)'
     types:
-    - <xref:azure.core.polling.LROPoller>[<xref:None>]
+    - <xref:azure.core.polling.LROPoller>[<xref:azure.mgmt.managednetworkfabric.models.CommonPostActionResponseForDeviceUpdate>]
   exceptions:
   - type: azure.core.exceptions.HttpResponseError
-- uid: azure.mgmt.managednetworkfabric.operations.L3IsolationDomainsOperations.begin_update_option_b_administrative_state
-  name: begin_update_option_b_administrative_state
-  summary: 'Update route targets on CE devices. List the CE network device ARM resource
-    IDs in the request
-
-    body payload.
-
-
-    Update administrative state of option B on CE devices.'
-  signature: 'begin_update_option_b_administrative_state(resource_group_name: str,
-    l3_isolation_domain_name: str, body: _models.UpdateAdministrativeState, *, content_type:
-    str = ''application/json'', **kwargs: Any) -> LROPoller[None]'
+- uid: azure.mgmt.managednetworkfabric.operations.L3IsolationDomainsOperations.begin_validate_configuration
+  name: begin_validate_configuration
+  summary: Validates the configuration of the resources.
+  signature: 'begin_validate_configuration(resource_group_name: str, l3_isolation_domain_name:
+    str, **kwargs: Any) -> LROPoller[ValidateConfigurationResponse]'
   parameters:
   - name: resource_group_name
     description: 'The name of the resource group. The name is case insensitive.
@@ -435,23 +350,8 @@ methods:
     types:
     - <xref:str>
   - name: l3_isolation_domain_name
-    description: Name of the L3IsolationDomain. Required.
+    description: Name of the L3 Isolation Domain. Required.
     isRequired: true
-    types:
-    - <xref:str>
-  - name: body
-    description: 'Request payload. Is either a UpdateAdministrativeState type or a
-      IO type.
-
-      Required.'
-    isRequired: true
-    types:
-    - <xref:azure.mgmt.managednetworkfabric.models.UpdateAdministrativeState>
-    - <xref:IO>
-  - name: content_type
-    description: 'Body Parameter content-type. Known values are: ''application/json''.
-
-      Default value is None.'
     types:
     - <xref:str>
   - name: cls
@@ -480,10 +380,12 @@ methods:
     types:
     - <xref:int>
   return:
-    description: An instance of LROPoller that returns either None or the result of
-      cls(response)
+    description: 'An instance of LROPoller that returns either ValidateConfigurationResponse
+      or the
+
+      result of cls(response)'
     types:
-    - <xref:azure.core.polling.LROPoller>[<xref:None>]
+    - <xref:azure.core.polling.LROPoller>[<xref:azure.mgmt.managednetworkfabric.models.ValidateConfigurationResponse>]
   exceptions:
   - type: azure.core.exceptions.HttpResponseError
 - uid: azure.mgmt.managednetworkfabric.operations.L3IsolationDomainsOperations.get

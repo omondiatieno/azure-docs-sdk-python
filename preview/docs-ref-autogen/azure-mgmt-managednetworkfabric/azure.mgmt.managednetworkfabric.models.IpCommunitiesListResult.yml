@@ -5,21 +5,21 @@ fullName: azure.mgmt.managednetworkfabric.models.IpCommunitiesListResult
 module: azure.mgmt.managednetworkfabric.models
 inheritances:
 - azure.mgmt.managednetworkfabric._serialization.Model
-summary: List of IPCommunities.
+summary: List of IP Communities.
 constructor:
   syntax: 'IpCommunitiesListResult(*, value: List[_models.IpCommunity] | None = None,
     next_link: str | None = None, **kwargs: Any)'
   parameters:
   - name: value
-    description: List of IpCommunity resources.
+    description: List of IP Community resources.
     types:
-    - <xref:azure.mgmt.managednetworkfabric.aio.operations.ExternalNetworksOperations.list>[<xref:azure.mgmt.managednetworkfabric.models.IpCommunity>]
+    - <xref:azure.mgmt.managednetworkfabric.aio.operations.Operations.list>[<xref:azure.mgmt.managednetworkfabric.models.IpCommunity>]
   - name: next_link
     description: Url to follow for getting next page of resources.
     types:
     - <xref:str>
 variables:
-- description: List of IpCommunity resources.
+- description: List of IP Community resources.
   name: value
   types:
   - <xref:list>[<xref:azure.mgmt.managednetworkfabric.models.IpCommunity>]

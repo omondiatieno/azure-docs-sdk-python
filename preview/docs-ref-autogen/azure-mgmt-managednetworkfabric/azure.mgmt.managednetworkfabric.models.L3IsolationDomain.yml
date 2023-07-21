@@ -5,7 +5,7 @@ fullName: azure.mgmt.managednetworkfabric.models.L3IsolationDomain
 module: azure.mgmt.managednetworkfabric.models
 inheritances:
 - azure.mgmt.managednetworkfabric.models._models_py3.TrackedResource
-summary: 'The L3IsolationDomain resource definition.
+summary: 'The L3 Isolation Domain resource definition.
 
 
   Variables are only populated by the server, and will be ignored when sending a request.
@@ -13,13 +13,12 @@ summary: 'The L3IsolationDomain resource definition.
 
   All required parameters must be populated in order to send to Azure.'
 constructor:
-  syntax: 'L3IsolationDomain(*, location: str, tags: Dict[str, str] | None = None,
-    annotation: str | None = None, redistribute_connected_subnets: str | _models.RedistributeConnectedSubnets
-    = ''True'', redistribute_static_routes: str | _models.RedistributeStaticRoutes
-    = ''False'', aggregate_route_configuration: _models.AggregateRouteConfiguration
-    | None = None, description: str | None = None, connected_subnet_route_policy:
-    _models.L3IsolationDomainPatchPropertiesConnectedSubnetRoutePolicy | None = None,
-    network_fabric_id: str | None = None, **kwargs: Any)'
+  syntax: 'L3IsolationDomain(*, location: str, network_fabric_id: str, tags: Dict[str,
+    str] | None = None, annotation: str | None = None, redistribute_connected_subnets:
+    str | _models.RedistributeConnectedSubnets = ''True'', redistribute_static_routes:
+    str | _models.RedistributeStaticRoutes = ''False'', aggregate_route_configuration:
+    _models.AggregateRouteConfiguration | None = None, connected_subnet_route_policy:
+    _models.ConnectedSubnetRoutePolicy | None = None, **kwargs: Any)'
   parameters:
   - name: tags
     description: Resource tags.
@@ -48,25 +47,21 @@ constructor:
     - <xref:str>
     - <xref:azure.mgmt.managednetworkfabric.models.RedistributeStaticRoutes>
   - name: aggregate_route_configuration
-    description: List of Ipv4 and Ipv6 route configurations.
+    description: Aggregate route configurations.
     types:
     - <xref:azure.mgmt.managednetworkfabric.models.AggregateRouteConfiguration>
-  - name: description
-    description: L3 Isolation Domain description.
-    types:
-    - <xref:str>
   - name: connected_subnet_route_policy
     description: Connected Subnet RoutePolicy.
     types:
-    - <xref:azure.mgmt.managednetworkfabric.models.L3IsolationDomainPatchPropertiesConnectedSubnetRoutePolicy>
+    - <xref:azure.mgmt.managednetworkfabric.models.ConnectedSubnetRoutePolicy>
   - name: network_fabric_id
-    description: Network Fabric ARM resource id.
+    description: ARM Resource ID of the Network Fabric. Required.
     types:
     - <xref:str>
 variables:
-- description: 'Fully qualified resource ID for the resource. Ex -
+- description: 'Fully qualified resource ID for the resource. E.g.
 
-    /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}.'
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}".'
   name: id
   types:
   - <xref:str>
@@ -113,45 +108,38 @@ variables:
   types:
   - <xref:str>
   - <xref:azure.mgmt.managednetworkfabric.models.RedistributeStaticRoutes>
-- description: List of Ipv4 and Ipv6 route configurations.
+- description: Aggregate route configurations.
   name: aggregate_route_configuration
   types:
   - <xref:azure.mgmt.managednetworkfabric.models.AggregateRouteConfiguration>
-- description: L3 Isolation Domain description.
-  name: description
-  types:
-  - <xref:str>
 - description: Connected Subnet RoutePolicy.
   name: connected_subnet_route_policy
   types:
-  - <xref:azure.mgmt.managednetworkfabric.models.L3IsolationDomainPatchPropertiesConnectedSubnetRoutePolicy>
-- description: Network Fabric ARM resource id.
+  - <xref:azure.mgmt.managednetworkfabric.models.ConnectedSubnetRoutePolicy>
+- description: ARM Resource ID of the Network Fabric. Required.
   name: network_fabric_id
   types:
   - <xref:str>
-- description: 'List of resources the L3 Isolation Domain is disabled on. Can be
+- description: 'Configuration state of the resource. Known values are: "Succeeded",
 
-    either entire NetworkFabric or NetworkRack.'
-  name: disabled_on_resources
-  types:
-  - <xref:list>[<xref:str>]
-- description: 'Administrative state of the IsolationDomain. Example: Enabled |
+    "Failed", "Rejected", "Accepted", "Provisioned", "ErrorProvisioning", "Deprovisioning",
 
-    Disabled. Known values are: "Enabled" and "Disabled".'
-  name: administrative_state
+    "Deprovisioned", "ErrorDeprovisioning", and "DeferredControl".'
+  name: configuration_state
   types:
   - <xref:str>
-  - <xref:azure.mgmt.managednetworkfabric.models.EnabledDisabledState>
-- description: 'List of resources the OptionB is disabled on. Can be
+  - <xref:azure.mgmt.managednetworkfabric.models.ConfigurationState>
+- description: 'Provisioning state of the resource. Known values are: "Accepted",
 
-    either entire NetworkFabric or NetworkRack.'
-  name: option_b_disabled_on_resources
-  types:
-  - <xref:list>[<xref:str>]
-- description: 'Gets the provisioning state of the resource. Known values are:
-
-    "Succeeded", "Updating", "Canceled", "Deleting", and "Failed".'
+    "Succeeded", "Updating", "Deleting", "Failed", and "Canceled".'
   name: provisioning_state
   types:
   - <xref:str>
   - <xref:azure.mgmt.managednetworkfabric.models.ProvisioningState>
+- description: 'Administrative state of the resource. Known values are: "Enabled",
+
+    "Disabled", "MAT", and "RMA".'
+  name: administrative_state
+  types:
+  - <xref:str>
+  - <xref:azure.mgmt.managednetworkfabric.models.AdministrativeState>

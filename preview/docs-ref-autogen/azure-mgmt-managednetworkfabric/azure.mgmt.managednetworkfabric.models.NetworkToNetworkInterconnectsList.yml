@@ -5,7 +5,7 @@ fullName: azure.mgmt.managednetworkfabric.models.NetworkToNetworkInterconnectsLi
 module: azure.mgmt.managednetworkfabric.models
 inheritances:
 - azure.mgmt.managednetworkfabric._serialization.Model
-summary: List of NetworkToNetworkInterconnects.
+summary: List of Network To Network Interconnects.
 constructor:
   syntax: 'NetworkToNetworkInterconnectsList(*, value: List[_models.NetworkToNetworkInterconnect]
     | None = None, next_link: str | None = None, **kwargs: Any)'
@@ -13,7 +13,7 @@ constructor:
   - name: value
     description: List of NetworkToNetworkInterconnects resources.
     types:
-    - <xref:azure.mgmt.managednetworkfabric.aio.operations.ExternalNetworksOperations.list>[<xref:azure.mgmt.managednetworkfabric.models.NetworkToNetworkInterconnect>]
+    - <xref:azure.mgmt.managednetworkfabric.aio.operations.Operations.list>[<xref:azure.mgmt.managednetworkfabric.models.NetworkToNetworkInterconnect>]
   - name: next_link
     description: Url to follow for getting next page of resources.
     types:

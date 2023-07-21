@@ -11,6 +11,63 @@ summary: "> [!WARNING]\n> DO NOT instantiate this class directly.\n>\n> \n>\n> I
 constructor:
   syntax: NetworkFabricsOperations(*args, **kwargs)
 methods:
+- uid: azure.mgmt.managednetworkfabric.aio.operations.NetworkFabricsOperations.begin_commit_configuration
+  name: begin_commit_configuration
+  summary: 'Implements the operation to the underlying resources.
+
+
+    Atomic update of the given Network Fabric instance. Sync update of NFA resources
+    at Fabric
+
+    level.'
+  signature: 'async begin_commit_configuration(resource_group_name: str, network_fabric_name:
+    str, **kwargs: Any) -> AsyncLROPoller[CommonPostActionResponseForStateUpdate]'
+  parameters:
+  - name: resource_group_name
+    description: 'The name of the resource group. The name is case insensitive.
+
+      Required.'
+    isRequired: true
+    types:
+    - <xref:str>
+  - name: network_fabric_name
+    description: Name of the Network Fabric. Required.
+    isRequired: true
+    types:
+    - <xref:str>
+  - name: cls
+    description: A custom type or function that will be passed the direct response
+    types:
+    - <xref:callable>
+  - name: continuation_token
+    description: A continuation token to restart a poller from a saved state.
+    types:
+    - <xref:str>
+  - name: polling
+    description: 'By default, your polling method will be AsyncARMPolling. Pass in
+      False for
+
+      this operation to not poll, or pass in your own initialized polling object for
+      a personal
+
+      polling strategy.'
+    types:
+    - <xref:bool>
+    - <xref:azure.core.polling.AsyncPollingMethod>
+  - name: polling_interval
+    description: 'Default waiting time between two polls for LRO operations if no
+
+      Retry-After header is present.'
+    types:
+    - <xref:int>
+  return:
+    description: 'An instance of AsyncLROPoller that returns either
+
+      CommonPostActionResponseForStateUpdate or the result of cls(response)'
+    types:
+    - <xref:azure.core.polling.AsyncLROPoller>[<xref:azure.mgmt.managednetworkfabric.models.CommonPostActionResponseForStateUpdate>]
+  exceptions:
+  - type: azure.core.exceptions.HttpResponseError
 - uid: azure.mgmt.managednetworkfabric.aio.operations.NetworkFabricsOperations.begin_create
   name: begin_create
   summary: 'Create Network Fabric.
@@ -139,7 +196,7 @@ methods:
 
     Deprovisions the underlying resources in the given Network Fabric instance.'
   signature: 'async begin_deprovision(resource_group_name: str, network_fabric_name:
-    str, **kwargs: Any) -> AsyncLROPoller[None]'
+    str, **kwargs: Any) -> AsyncLROPoller[CommonPostActionResponseForDeviceUpdate]'
   parameters:
   - name: resource_group_name
     description: 'The name of the resource group. The name is case insensitive.
@@ -149,7 +206,7 @@ methods:
     types:
     - <xref:str>
   - name: network_fabric_name
-    description: Name of the NetworkFabric. Required.
+    description: Name of the Network Fabric. Required.
     isRequired: true
     types:
     - <xref:str>
@@ -179,10 +236,66 @@ methods:
     types:
     - <xref:int>
   return:
-    description: An instance of AsyncLROPoller that returns either None or the result
-      of cls(response)
+    description: 'An instance of AsyncLROPoller that returns either
+
+      CommonPostActionResponseForDeviceUpdate or the result of cls(response)'
     types:
-    - <xref:azure.core.polling.AsyncLROPoller>[<xref:None>]
+    - <xref:azure.core.polling.AsyncLROPoller>[<xref:azure.mgmt.managednetworkfabric.models.CommonPostActionResponseForDeviceUpdate>]
+  exceptions:
+  - type: azure.core.exceptions.HttpResponseError
+- uid: azure.mgmt.managednetworkfabric.aio.operations.NetworkFabricsOperations.begin_get_topology
+  name: begin_get_topology
+  summary: 'Implements the operation to the underlying resources.
+
+
+    Gets Topology of the underlying resources in the given Network Fabric instance.'
+  signature: 'async begin_get_topology(resource_group_name: str, network_fabric_name:
+    str, **kwargs: Any) -> AsyncLROPoller[ValidateConfigurationResponse]'
+  parameters:
+  - name: resource_group_name
+    description: 'The name of the resource group. The name is case insensitive.
+
+      Required.'
+    isRequired: true
+    types:
+    - <xref:str>
+  - name: network_fabric_name
+    description: Name of the Network Fabric. Required.
+    isRequired: true
+    types:
+    - <xref:str>
+  - name: cls
+    description: A custom type or function that will be passed the direct response
+    types:
+    - <xref:callable>
+  - name: continuation_token
+    description: A continuation token to restart a poller from a saved state.
+    types:
+    - <xref:str>
+  - name: polling
+    description: 'By default, your polling method will be AsyncARMPolling. Pass in
+      False for
+
+      this operation to not poll, or pass in your own initialized polling object for
+      a personal
+
+      polling strategy.'
+    types:
+    - <xref:bool>
+    - <xref:azure.core.polling.AsyncPollingMethod>
+  - name: polling_interval
+    description: 'Default waiting time between two polls for LRO operations if no
+
+      Retry-After header is present.'
+    types:
+    - <xref:int>
+  return:
+    description: 'An instance of AsyncLROPoller that returns either ValidateConfigurationResponse
+      or the
+
+      result of cls(response)'
+    types:
+    - <xref:azure.core.polling.AsyncLROPoller>[<xref:azure.mgmt.managednetworkfabric.models.ValidateConfigurationResponse>]
   exceptions:
   - type: azure.core.exceptions.HttpResponseError
 - uid: azure.mgmt.managednetworkfabric.aio.operations.NetworkFabricsOperations.begin_provision
@@ -192,7 +305,7 @@ methods:
 
     Provisions the underlying resources in the given Network Fabric instance.'
   signature: 'async begin_provision(resource_group_name: str, network_fabric_name:
-    str, **kwargs: Any) -> AsyncLROPoller[None]'
+    str, **kwargs: Any) -> AsyncLROPoller[CommonPostActionResponseForDeviceUpdate]'
   parameters:
   - name: resource_group_name
     description: 'The name of the resource group. The name is case insensitive.
@@ -202,7 +315,7 @@ methods:
     types:
     - <xref:str>
   - name: network_fabric_name
-    description: Name of the NetworkFabric. Required.
+    description: Name of the Network Fabric. Required.
     isRequired: true
     types:
     - <xref:str>
@@ -232,10 +345,66 @@ methods:
     types:
     - <xref:int>
   return:
-    description: An instance of AsyncLROPoller that returns either None or the result
-      of cls(response)
+    description: 'An instance of AsyncLROPoller that returns either
+
+      CommonPostActionResponseForDeviceUpdate or the result of cls(response)'
     types:
-    - <xref:azure.core.polling.AsyncLROPoller>[<xref:None>]
+    - <xref:azure.core.polling.AsyncLROPoller>[<xref:azure.mgmt.managednetworkfabric.models.CommonPostActionResponseForDeviceUpdate>]
+  exceptions:
+  - type: azure.core.exceptions.HttpResponseError
+- uid: azure.mgmt.managednetworkfabric.aio.operations.NetworkFabricsOperations.begin_refresh_configuration
+  name: begin_refresh_configuration
+  summary: 'Implements the operation to the underlying resources.
+
+
+    Refreshes the configuration of the underlying resources in the given Network Fabric
+    instance.'
+  signature: 'async begin_refresh_configuration(resource_group_name: str, network_fabric_name:
+    str, **kwargs: Any) -> AsyncLROPoller[CommonPostActionResponseForStateUpdate]'
+  parameters:
+  - name: resource_group_name
+    description: 'The name of the resource group. The name is case insensitive.
+
+      Required.'
+    isRequired: true
+    types:
+    - <xref:str>
+  - name: network_fabric_name
+    description: Name of the Network Fabric. Required.
+    isRequired: true
+    types:
+    - <xref:str>
+  - name: cls
+    description: A custom type or function that will be passed the direct response
+    types:
+    - <xref:callable>
+  - name: continuation_token
+    description: A continuation token to restart a poller from a saved state.
+    types:
+    - <xref:str>
+  - name: polling
+    description: 'By default, your polling method will be AsyncARMPolling. Pass in
+      False for
+
+      this operation to not poll, or pass in your own initialized polling object for
+      a personal
+
+      polling strategy.'
+    types:
+    - <xref:bool>
+    - <xref:azure.core.polling.AsyncPollingMethod>
+  - name: polling_interval
+    description: 'Default waiting time between two polls for LRO operations if no
+
+      Retry-After header is present.'
+    types:
+    - <xref:int>
+  return:
+    description: 'An instance of AsyncLROPoller that returns either
+
+      CommonPostActionResponseForStateUpdate or the result of cls(response)'
+    types:
+    - <xref:azure.core.polling.AsyncLROPoller>[<xref:azure.mgmt.managednetworkfabric.models.CommonPostActionResponseForStateUpdate>]
   exceptions:
   - type: azure.core.exceptions.HttpResponseError
 - uid: azure.mgmt.managednetworkfabric.aio.operations.NetworkFabricsOperations.begin_update
@@ -245,7 +414,7 @@ methods:
 
     Update certain properties of the Network Fabric resource.'
   signature: 'async begin_update(resource_group_name: str, network_fabric_name: str,
-    body: _models.NetworkFabricPatchParameters, *, content_type: str = ''application/json'',
+    body: _models.NetworkFabricPatch, *, content_type: str = ''application/json'',
     **kwargs: Any) -> AsyncLROPoller[_models.NetworkFabric]'
   parameters:
   - name: resource_group_name
@@ -261,13 +430,13 @@ methods:
     types:
     - <xref:str>
   - name: body
-    description: 'Network Fabric properties to update. Is either a NetworkFabricPatchParameters
-      type
+    description: 'Network Fabric properties to update. Is either a NetworkFabricPatch
+      type or a IO
 
-      or a IO type. Required.'
+      type. Required.'
     isRequired: true
     types:
-    - <xref:azure.mgmt.managednetworkfabric.models.NetworkFabricPatchParameters>
+    - <xref:azure.mgmt.managednetworkfabric.models.NetworkFabricPatch>
     - <xref:IO>
   - name: content_type
     description: 'Body Parameter content-type. Known values are: ''application/json''.
@@ -309,6 +478,293 @@ methods:
     - <xref:azure.core.polling.AsyncLROPoller>[<xref:azure.mgmt.managednetworkfabric.models.NetworkFabric>]
   exceptions:
   - type: azure.core.exceptions.HttpResponseError
+- uid: azure.mgmt.managednetworkfabric.aio.operations.NetworkFabricsOperations.begin_update_infra_management_bfd_configuration
+  name: begin_update_infra_management_bfd_configuration
+  summary: 'Implements the operation to the underlying resources.
+
+
+    Updates the Infra Management BFD Configuration of the underlying resources in
+    the given Network
+
+    Fabric instance.'
+  signature: 'async begin_update_infra_management_bfd_configuration(resource_group_name:
+    str, network_fabric_name: str, body: _models.UpdateAdministrativeState, *, content_type:
+    str = ''application/json'', **kwargs: Any) -> AsyncLROPoller[_models.CommonPostActionResponseForStateUpdate]'
+  parameters:
+  - name: resource_group_name
+    description: 'The name of the resource group. The name is case insensitive.
+
+      Required.'
+    isRequired: true
+    types:
+    - <xref:str>
+  - name: network_fabric_name
+    description: Name of the Network Fabric. Required.
+    isRequired: true
+    types:
+    - <xref:str>
+  - name: body
+    description: 'Request payload. Is either a UpdateAdministrativeState type or a
+      IO type.
+
+      Required.'
+    isRequired: true
+    types:
+    - <xref:azure.mgmt.managednetworkfabric.models.UpdateAdministrativeState>
+    - <xref:IO>
+  - name: content_type
+    description: 'Body Parameter content-type. Known values are: ''application/json''.
+
+      Default value is None.'
+    types:
+    - <xref:str>
+  - name: cls
+    description: A custom type or function that will be passed the direct response
+    types:
+    - <xref:callable>
+  - name: continuation_token
+    description: A continuation token to restart a poller from a saved state.
+    types:
+    - <xref:str>
+  - name: polling
+    description: 'By default, your polling method will be AsyncARMPolling. Pass in
+      False for
+
+      this operation to not poll, or pass in your own initialized polling object for
+      a personal
+
+      polling strategy.'
+    types:
+    - <xref:bool>
+    - <xref:azure.core.polling.AsyncPollingMethod>
+  - name: polling_interval
+    description: 'Default waiting time between two polls for LRO operations if no
+
+      Retry-After header is present.'
+    types:
+    - <xref:int>
+  return:
+    description: 'An instance of AsyncLROPoller that returns either
+
+      CommonPostActionResponseForStateUpdate or the result of cls(response)'
+    types:
+    - <xref:azure.core.polling.AsyncLROPoller>[<xref:azure.mgmt.managednetworkfabric.models.CommonPostActionResponseForStateUpdate>]
+  exceptions:
+  - type: azure.core.exceptions.HttpResponseError
+- uid: azure.mgmt.managednetworkfabric.aio.operations.NetworkFabricsOperations.begin_update_workload_management_bfd_configuration
+  name: begin_update_workload_management_bfd_configuration
+  summary: 'Implements the operation to the underlying resources.
+
+
+    Updates the Workload Management BFD Configuration of the underlying resources
+    in the given
+
+    Network Fabric instance.'
+  signature: 'async begin_update_workload_management_bfd_configuration(resource_group_name:
+    str, network_fabric_name: str, body: _models.UpdateAdministrativeState, *, content_type:
+    str = ''application/json'', **kwargs: Any) -> AsyncLROPoller[_models.CommonPostActionResponseForStateUpdate]'
+  parameters:
+  - name: resource_group_name
+    description: 'The name of the resource group. The name is case insensitive.
+
+      Required.'
+    isRequired: true
+    types:
+    - <xref:str>
+  - name: network_fabric_name
+    description: Name of the Network Fabric. Required.
+    isRequired: true
+    types:
+    - <xref:str>
+  - name: body
+    description: 'Request payload. Is either a UpdateAdministrativeState type or a
+      IO type.
+
+      Required.'
+    isRequired: true
+    types:
+    - <xref:azure.mgmt.managednetworkfabric.models.UpdateAdministrativeState>
+    - <xref:IO>
+  - name: content_type
+    description: 'Body Parameter content-type. Known values are: ''application/json''.
+
+      Default value is None.'
+    types:
+    - <xref:str>
+  - name: cls
+    description: A custom type or function that will be passed the direct response
+    types:
+    - <xref:callable>
+  - name: continuation_token
+    description: A continuation token to restart a poller from a saved state.
+    types:
+    - <xref:str>
+  - name: polling
+    description: 'By default, your polling method will be AsyncARMPolling. Pass in
+      False for
+
+      this operation to not poll, or pass in your own initialized polling object for
+      a personal
+
+      polling strategy.'
+    types:
+    - <xref:bool>
+    - <xref:azure.core.polling.AsyncPollingMethod>
+  - name: polling_interval
+    description: 'Default waiting time between two polls for LRO operations if no
+
+      Retry-After header is present.'
+    types:
+    - <xref:int>
+  return:
+    description: 'An instance of AsyncLROPoller that returns either
+
+      CommonPostActionResponseForStateUpdate or the result of cls(response)'
+    types:
+    - <xref:azure.core.polling.AsyncLROPoller>[<xref:azure.mgmt.managednetworkfabric.models.CommonPostActionResponseForStateUpdate>]
+  exceptions:
+  - type: azure.core.exceptions.HttpResponseError
+- uid: azure.mgmt.managednetworkfabric.aio.operations.NetworkFabricsOperations.begin_upgrade
+  name: begin_upgrade
+  summary: 'Implements the operation to the underlying resources.
+
+
+    Upgrades the version of the underlying resources in the given Network Fabric instance.'
+  signature: 'async begin_upgrade(resource_group_name: str, network_fabric_name: str,
+    body: _models.UpdateVersion, *, content_type: str = ''application/json'', **kwargs:
+    Any) -> AsyncLROPoller[_models.CommonPostActionResponseForStateUpdate]'
+  parameters:
+  - name: resource_group_name
+    description: 'The name of the resource group. The name is case insensitive.
+
+      Required.'
+    isRequired: true
+    types:
+    - <xref:str>
+  - name: network_fabric_name
+    description: Name of the Network Fabric. Required.
+    isRequired: true
+    types:
+    - <xref:str>
+  - name: body
+    description: 'Network Fabric properties to update. Is either a UpdateVersion type
+      or a IO type.
+
+      Required.'
+    isRequired: true
+    types:
+    - <xref:azure.mgmt.managednetworkfabric.models.UpdateVersion>
+    - <xref:IO>
+  - name: content_type
+    description: 'Body Parameter content-type. Known values are: ''application/json''.
+
+      Default value is None.'
+    types:
+    - <xref:str>
+  - name: cls
+    description: A custom type or function that will be passed the direct response
+    types:
+    - <xref:callable>
+  - name: continuation_token
+    description: A continuation token to restart a poller from a saved state.
+    types:
+    - <xref:str>
+  - name: polling
+    description: 'By default, your polling method will be AsyncARMPolling. Pass in
+      False for
+
+      this operation to not poll, or pass in your own initialized polling object for
+      a personal
+
+      polling strategy.'
+    types:
+    - <xref:bool>
+    - <xref:azure.core.polling.AsyncPollingMethod>
+  - name: polling_interval
+    description: 'Default waiting time between two polls for LRO operations if no
+
+      Retry-After header is present.'
+    types:
+    - <xref:int>
+  return:
+    description: 'An instance of AsyncLROPoller that returns either
+
+      CommonPostActionResponseForStateUpdate or the result of cls(response)'
+    types:
+    - <xref:azure.core.polling.AsyncLROPoller>[<xref:azure.mgmt.managednetworkfabric.models.CommonPostActionResponseForStateUpdate>]
+  exceptions:
+  - type: azure.core.exceptions.HttpResponseError
+- uid: azure.mgmt.managednetworkfabric.aio.operations.NetworkFabricsOperations.begin_validate_configuration
+  name: begin_validate_configuration
+  summary: 'Implements the operation to the underlying resources.
+
+
+    Validates the configuration of the underlying resources in the given Network Fabric
+    instance.'
+  signature: 'async begin_validate_configuration(resource_group_name: str, network_fabric_name:
+    str, body: _models.ValidateConfigurationProperties, *, content_type: str = ''application/json'',
+    **kwargs: Any) -> AsyncLROPoller[_models.ValidateConfigurationResponse]'
+  parameters:
+  - name: resource_group_name
+    description: 'The name of the resource group. The name is case insensitive.
+
+      Required.'
+    isRequired: true
+    types:
+    - <xref:str>
+  - name: network_fabric_name
+    description: Name of the Network Fabric. Required.
+    isRequired: true
+    types:
+    - <xref:str>
+  - name: body
+    description: 'Validate configuration properties. Is either a ValidateConfigurationProperties
+
+      type or a IO type. Required.'
+    isRequired: true
+    types:
+    - <xref:azure.mgmt.managednetworkfabric.models.ValidateConfigurationProperties>
+    - <xref:IO>
+  - name: content_type
+    description: 'Body Parameter content-type. Known values are: ''application/json''.
+
+      Default value is None.'
+    types:
+    - <xref:str>
+  - name: cls
+    description: A custom type or function that will be passed the direct response
+    types:
+    - <xref:callable>
+  - name: continuation_token
+    description: A continuation token to restart a poller from a saved state.
+    types:
+    - <xref:str>
+  - name: polling
+    description: 'By default, your polling method will be AsyncARMPolling. Pass in
+      False for
+
+      this operation to not poll, or pass in your own initialized polling object for
+      a personal
+
+      polling strategy.'
+    types:
+    - <xref:bool>
+    - <xref:azure.core.polling.AsyncPollingMethod>
+  - name: polling_interval
+    description: 'Default waiting time between two polls for LRO operations if no
+
+      Retry-After header is present.'
+    types:
+    - <xref:int>
+  return:
+    description: 'An instance of AsyncLROPoller that returns either ValidateConfigurationResponse
+      or the
+
+      result of cls(response)'
+    types:
+    - <xref:azure.core.polling.AsyncLROPoller>[<xref:azure.mgmt.managednetworkfabric.models.ValidateConfigurationResponse>]
+  exceptions:
+  - type: azure.core.exceptions.HttpResponseError
 - uid: azure.mgmt.managednetworkfabric.aio.operations.NetworkFabricsOperations.get
   name: get
   summary: 'Gets a Network Fabric.
@@ -342,7 +798,7 @@ methods:
   - type: azure.core.exceptions.HttpResponseError
 - uid: azure.mgmt.managednetworkfabric.aio.operations.NetworkFabricsOperations.list_by_resource_group
   name: list_by_resource_group
-  summary: 'List NetworkFabrics by resource group.
+  summary: 'List Network Fabrics by resource group.
 
 
     List all the Network Fabric resources in the given resource group.'
@@ -368,7 +824,7 @@ methods:
   - type: azure.core.exceptions.HttpResponseError
 - uid: azure.mgmt.managednetworkfabric.aio.operations.NetworkFabricsOperations.list_by_subscription
   name: list_by_subscription
-  summary: 'List NetworkFabrics by subscription.
+  summary: 'List Network Fabrics by subscription.
 
 
     List all the Network Fabric resources in the given subscription.'

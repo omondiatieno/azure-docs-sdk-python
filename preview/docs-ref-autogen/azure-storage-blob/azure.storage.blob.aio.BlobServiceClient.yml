@@ -654,5 +654,6 @@ methods:
     types:
     - <xref:int>
   return:
+    description: The recovered soft-deleted ContainerClient.
     types:
     - <xref:azure.storage.blob.aio.ContainerClient>

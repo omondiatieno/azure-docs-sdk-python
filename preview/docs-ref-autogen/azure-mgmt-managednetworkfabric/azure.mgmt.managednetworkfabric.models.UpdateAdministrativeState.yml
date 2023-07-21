@@ -8,17 +8,17 @@ inheritances:
 summary: Update administrative state on list of resources.
 constructor:
   syntax: 'UpdateAdministrativeState(*, resource_ids: List[str] | None = None, state:
-    str | _models.AdministrativeState | None = None, **kwargs: Any)'
+    str | _models.EnableDisableState | None = None, **kwargs: Any)'
   parameters:
   - name: resource_ids
     description: Network Fabrics or Network Rack resource Id.
     types:
-    - <xref:azure.mgmt.managednetworkfabric.aio.operations.ExternalNetworksOperations.list>[<xref:str>]
+    - <xref:azure.mgmt.managednetworkfabric.aio.operations.Operations.list>[<xref:str>]
   - name: state
     description: 'Administrative state. Known values are: "Enable" and "Disable".'
     types:
     - <xref:str>
-    - <xref:azure.mgmt.managednetworkfabric.models.AdministrativeState>
+    - <xref:azure.mgmt.managednetworkfabric.models.EnableDisableState>
 variables:
 - description: Network Fabrics or Network Rack resource Id.
   name: resource_ids
@@ -28,4 +28,4 @@ variables:
   name: state
   types:
   - <xref:str>
-  - <xref:azure.mgmt.managednetworkfabric.models.AdministrativeState>
+  - <xref:azure.mgmt.managednetworkfabric.models.EnableDisableState>

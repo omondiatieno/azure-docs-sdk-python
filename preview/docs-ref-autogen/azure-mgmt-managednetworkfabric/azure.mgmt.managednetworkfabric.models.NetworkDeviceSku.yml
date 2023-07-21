@@ -14,10 +14,9 @@ summary: 'The NetworkDeviceSku resource definition.
   All required parameters must be populated in order to send to Azure.'
 constructor:
   syntax: 'NetworkDeviceSku(*, model: str, manufacturer: str | None = None, supported_versions:
-    List[_models.SupportedVersionProperties] | None = None, limits: _models.DeviceLimits
-    | None = None, supported_role_types: List[str | _models.NetworkDeviceRoleName]
-    | None = None, interfaces: List[_models.DeviceInterfaceProperties] | None = None,
-    **kwargs: Any)'
+    List[_models.SupportedVersionProperties] | None = None, supported_role_types:
+    List[str | _models.NetworkDeviceRoleName] | None = None, interfaces: List[_models.DeviceInterfaceProperties]
+    | None = None, **kwargs: Any)'
   parameters:
   - name: model
     description: Model of the network device. Required.
@@ -28,26 +27,22 @@ constructor:
     types:
     - <xref:str>
   - name: supported_versions
-    description: List of network device interfaces.
+    description: List of supported version details of network device.
     types:
-    - <xref:azure.mgmt.managednetworkfabric.aio.operations.ExternalNetworksOperations.list>[<xref:azure.mgmt.managednetworkfabric.models.SupportedVersionProperties>]
-  - name: limits
-    description: Network device limits.
-    types:
-    - <xref:azure.mgmt.managednetworkfabric.models.DeviceLimits>
+    - <xref:azure.mgmt.managednetworkfabric.aio.operations.Operations.list>[<xref:azure.mgmt.managednetworkfabric.models.SupportedVersionProperties>]
   - name: supported_role_types
     description: Available roles for the network device.
     types:
-    - <xref:azure.mgmt.managednetworkfabric.aio.operations.ExternalNetworksOperations.list>[<xref:str>
+    - <xref:azure.mgmt.managednetworkfabric.aio.operations.Operations.list>[<xref:str>
     - <xref:azure.mgmt.managednetworkfabric.models.NetworkDeviceRoleName>]
   - name: interfaces
     description: List of network device interfaces.
     types:
-    - <xref:azure.mgmt.managednetworkfabric.aio.operations.ExternalNetworksOperations.list>[<xref:azure.mgmt.managednetworkfabric.models.DeviceInterfaceProperties>]
+    - <xref:azure.mgmt.managednetworkfabric.aio.operations.Operations.list>[<xref:azure.mgmt.managednetworkfabric.models.DeviceInterfaceProperties>]
 variables:
-- description: 'Fully qualified resource ID for the resource. Ex -
+- description: 'Fully qualified resource ID for the resource. E.g.
 
-    /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}.'
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}".'
   name: id
   types:
   - <xref:str>
@@ -76,14 +71,10 @@ variables:
   name: manufacturer
   types:
   - <xref:str>
-- description: List of network device interfaces.
+- description: List of supported version details of network device.
   name: supported_versions
   types:
   - <xref:list>[<xref:azure.mgmt.managednetworkfabric.models.SupportedVersionProperties>]
-- description: Network device limits.
-  name: limits
-  types:
-  - <xref:azure.mgmt.managednetworkfabric.models.DeviceLimits>
 - description: Available roles for the network device.
   name: supported_role_types
   types:
@@ -93,9 +84,9 @@ variables:
   name: interfaces
   types:
   - <xref:list>[<xref:azure.mgmt.managednetworkfabric.models.DeviceInterfaceProperties>]
-- description: 'Gets the provisioning state of the resource. Known values are:
+- description: 'Provisioning state of the resource. Known values are: "Accepted",
 
-    "Succeeded", "Updating", "Canceled", "Deleting", and "Failed".'
+    "Succeeded", "Updating", "Deleting", "Failed", and "Canceled".'
   name: provisioning_state
   types:
   - <xref:str>

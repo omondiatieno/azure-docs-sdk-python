@@ -4,15 +4,15 @@ name: NetworkDevicePatchParameters
 fullName: azure.mgmt.managednetworkfabric.models.NetworkDevicePatchParameters
 module: azure.mgmt.managednetworkfabric.models
 inheritances:
-- azure.mgmt.managednetworkfabric._serialization.Model
-summary: The NetworkDevicePatchParameters resource definition.
+- azure.mgmt.managednetworkfabric.models._models_py3.TagsUpdate
+summary: The Network Device Patch Parameters defines the patch parameters of the resource.
 constructor:
   syntax: 'NetworkDevicePatchParameters(*, tags: Dict[str, str] | None = None, annotation:
     str | None = None, host_name: str | None = None, serial_number: str | None = None,
     **kwargs: Any)'
   parameters:
   - name: tags
-    description: Azure resource tags that will replace the existing ones.
+    description: Resource tags.
     types:
     - <xref:dict>[<xref:str>, <xref:str>]
   - name: annotation
@@ -20,17 +20,17 @@ constructor:
     types:
     - <xref:str>
   - name: host_name
-    description: The host Name of the device.
+    description: The host name of the device.
     types:
     - <xref:str>
   - name: serial_number
-    description: 'serialNumber of the format Make;Model;HardwareRevisionId;SerialNumber.
+    description: 'Serial number of the device. Format of serial Number -
 
-      Example: Arista;DCS-7280DR3-24;12.05;JPE21116969.'
+      Make;Model;HardwareRevisionId;SerialNumber.'
     types:
     - <xref:str>
 variables:
-- description: Azure resource tags that will replace the existing ones.
+- description: Resource tags.
   name: tags
   types:
   - <xref:dict>[<xref:str>, <xref:str>]
@@ -38,13 +38,13 @@ variables:
   name: annotation
   types:
   - <xref:str>
-- description: The host Name of the device.
+- description: The host name of the device.
   name: host_name
   types:
   - <xref:str>
-- description: 'serialNumber of the format Make;Model;HardwareRevisionId;SerialNumber.
+- description: 'Serial number of the device. Format of serial Number -
 
-    Example: Arista;DCS-7280DR3-24;12.05;JPE21116969.'
+    Make;Model;HardwareRevisionId;SerialNumber.'
   name: serial_number
   types:
   - <xref:str>

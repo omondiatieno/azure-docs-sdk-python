@@ -11,11 +11,11 @@ constructor:
     | None = None, **kwargs: Any)'
   parameters:
   - name: add
-    description: IP Extended Community Id list properties.
+    description: List of IP Extended Community IDs.
     types:
     - <xref:azure.mgmt.managednetworkfabric.models.IpExtendedCommunityIdList>
 variables:
-- description: IP Extended Community Id list properties.
+- description: List of IP Extended Community IDs.
   name: add
   types:
   - <xref:azure.mgmt.managednetworkfabric.models.IpExtendedCommunityIdList>

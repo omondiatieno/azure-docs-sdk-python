@@ -5,7 +5,7 @@ fullName: azure.mgmt.managednetworkfabric.models.RoutePolicyStatementProperties
 module: azure.mgmt.managednetworkfabric.models
 inheritances:
 - azure.mgmt.managednetworkfabric.models._models_py3.AnnotationResource
-summary: 'Route Policy Statement properties..
+summary: 'Route Policy Statement properties.
 
 
   All required parameters must be populated in order to send to Azure.'

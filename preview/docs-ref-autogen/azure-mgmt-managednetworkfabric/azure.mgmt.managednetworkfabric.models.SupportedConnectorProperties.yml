@@ -11,7 +11,7 @@ constructor:
     int | None = None, **kwargs: Any)'
   parameters:
   - name: connector_type
-    description: 'Connector type. Example: Optical.'
+    description: 'Type of connector used. Example: Optical.'
     types:
     - <xref:str>
   - name: max_speed_in_mbps
@@ -19,7 +19,7 @@ constructor:
     types:
     - <xref:int>
 variables:
-- description: 'Connector type. Example: Optical.'
+- description: 'Type of connector used. Example: Optical.'
   name: connector_type
   types:
   - <xref:str>

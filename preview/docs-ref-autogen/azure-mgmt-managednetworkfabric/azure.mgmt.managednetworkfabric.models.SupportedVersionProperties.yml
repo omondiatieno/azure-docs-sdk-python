@@ -5,12 +5,11 @@ fullName: azure.mgmt.managednetworkfabric.models.SupportedVersionProperties
 module: azure.mgmt.managednetworkfabric.models
 inheritances:
 - azure.mgmt.managednetworkfabric._serialization.Model
-summary: Network device supported version properties.
+summary: Supported version details of the network device.
 constructor:
   syntax: 'SupportedVersionProperties(*, version: str | None = None, vendor_os_version:
-    str | None = None, vendor_firmware_version: str | None = None, is_current: str
-    | _models.IsCurrentVersion | None = None, is_test: str | _models.IsTestVersion
-    | None = None, **kwargs: Any)'
+    str | None = None, vendor_firmware_version: str | None = None, is_default: str
+    | _models.BooleanEnumProperty | None = None, **kwargs: Any)'
   parameters:
   - name: version
     description: Operating system and firmware combined versions.
@@ -24,19 +23,15 @@ constructor:
     description: Firmware version.
     types:
     - <xref:str>
-  - name: is_current
-    description: 'If the current version is in use. Known values are: "true" and "false".'
-    types:
-    - <xref:str>
-    - <xref:azure.mgmt.managednetworkfabric.models.IsCurrentVersion>
-  - name: is_test
-    description: 'If the current version is a test version. Known values are: "true"
-      and
+  - name: is_default
+    description: 'If true newly provisioned Fabric will use this device version by
+      default
 
-      "false".'
+      to bootstrap the network devices for the first time. Known values are: "True"
+      and "False".'
     types:
     - <xref:str>
-    - <xref:azure.mgmt.managednetworkfabric.models.IsTestVersion>
+    - <xref:azure.mgmt.managednetworkfabric.models.BooleanEnumProperty>
 variables:
 - description: Operating system and firmware combined versions.
   name: version
@@ -50,14 +45,12 @@ variables:
   name: vendor_firmware_version
   types:
   - <xref:str>
-- description: 'If the current version is in use. Known values are: "true" and "false".'
-  name: is_current
+- description: 'If true newly provisioned Fabric will use this device version by default
+    to
+
+    bootstrap the network devices for the first time. Known values are: "True" and
+    "False".'
+  name: is_default
   types:
   - <xref:str>
-  - <xref:azure.mgmt.managednetworkfabric.models.IsCurrentVersion>
-- description: 'If the current version is a test version. Known values are: "true"
-    and "false".'
-  name: is_test
-  types:
-  - <xref:str>
-  - <xref:azure.mgmt.managednetworkfabric.models.IsTestVersion>
+  - <xref:azure.mgmt.managednetworkfabric.models.BooleanEnumProperty>

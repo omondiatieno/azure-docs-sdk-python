@@ -1651,6 +1651,8 @@ methods:
     - <xref:int>
   return:
     description: boolean
+    types:
+    - <xref:bool>
 - uid: azure.storage.blob.BlobClient.from_blob_url
   name: from_blob_url
   summary: Create BlobClient from a blob url. This doesn't support customized blob
@@ -1692,6 +1694,9 @@ methods:
 
       should be the storage account key.'
     defaultValue: None
+    types:
+    - '<xref:Optional>[<xref:Union>[<xref:str>, <xref:Dict>[<xref:str>, <xref:str>],
+      <xref:"AzureNamedKeyCredential">, <xref:"AzureSasCredential">, <xref:"TokenCredential">]]<xref:  ./>'
   - name: snapshot
     description: 'The optional blob snapshot on which to operate. This can be the
       snapshot ID string
@@ -1759,6 +1764,9 @@ methods:
 
       should be the storage account key.'
     defaultValue: None
+    types:
+    - '<xref:Optional>[<xref:Union>[<xref:str>, <xref:Dict>[<xref:str>, <xref:str>],
+      <xref:"AzureNamedKeyCredential">, <xref:"AzureSasCredential">, <xref:"TokenCredential">]]<xref:  ./>'
   return:
     description: A Blob client.
     types:

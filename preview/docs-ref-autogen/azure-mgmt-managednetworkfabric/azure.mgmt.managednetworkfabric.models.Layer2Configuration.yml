@@ -5,32 +5,20 @@ fullName: azure.mgmt.managednetworkfabric.models.Layer2Configuration
 module: azure.mgmt.managednetworkfabric.models
 inheritances:
 - azure.mgmt.managednetworkfabric._serialization.Model
-summary: 'layer2Configuration.
-
-
-  Variables are only populated by the server, and will be ignored when sending a request.
-
-
-  All required parameters must be populated in order to send to Azure.'
+summary: Common properties for Layer2 Configuration.
 constructor:
-  syntax: 'Layer2Configuration(*, mtu: int = 1500, port_count: int | None = None,
-    **kwargs: Any)'
+  syntax: 'Layer2Configuration(*, mtu: int = 1500, interfaces: List[str] | None =
+    None, **kwargs: Any)'
   parameters:
-  - name: port_count
-    description: 'Number of ports connected between PE/CE. Maximum value depends on
-
-      FabricSKU.'
-    types:
-    - <xref:int>
   - name: mtu
     description: MTU of the packets between PE & CE.
     types:
     - <xref:int>
+  - name: interfaces
+    description: List of network device interfaces resource IDs.
+    types:
+    - <xref:azure.mgmt.managednetworkfabric.aio.operations.Operations.list>[<xref:str>]
 variables:
-- description: Number of ports connected between PE/CE. Maximum value depends on FabricSKU.
-  name: port_count
-  types:
-  - <xref:int>
 - description: MTU of the packets between PE & CE.
   name: mtu
   types:

@@ -5,7 +5,7 @@ fullName: azure.mgmt.managednetworkfabric.models.IpPrefix
 module: azure.mgmt.managednetworkfabric.models
 inheritances:
 - azure.mgmt.managednetworkfabric.models._models_py3.TrackedResource
-summary: 'The IPPrefix resource definition.
+summary: 'The IP Prefix resource definition.
 
 
   Variables are only populated by the server, and will be ignored when sending a request.
@@ -13,8 +13,9 @@ summary: 'The IPPrefix resource definition.
 
   All required parameters must be populated in order to send to Azure.'
 constructor:
-  syntax: 'IpPrefix(*, location: str, ip_prefix_rules: List[_models.IpPrefixPropertiesIpPrefixRulesItem],
-    tags: Dict[str, str] | None = None, annotation: str | None = None, **kwargs: Any)'
+  syntax: 'IpPrefix(*, location: str, tags: Dict[str, str] | None = None, annotation:
+    str | None = None, ip_prefix_rules: List[_models.IpPrefixRule] | None = None,
+    **kwargs: Any)'
   parameters:
   - name: tags
     description: Resource tags.
@@ -29,13 +30,13 @@ constructor:
     types:
     - <xref:str>
   - name: ip_prefix_rules
-    description: IpPrefix contains the list of IP PrefixRules objects. Required.
+    description: The list of IP Prefix Rules.
     types:
-    - <xref:azure.mgmt.managednetworkfabric.aio.operations.ExternalNetworksOperations.list>[<xref:azure.mgmt.managednetworkfabric.models.IpPrefixPropertiesIpPrefixRulesItem>]
+    - <xref:azure.mgmt.managednetworkfabric.aio.operations.Operations.list>[<xref:azure.mgmt.managednetworkfabric.models.IpPrefixRule>]
 variables:
-- description: 'Fully qualified resource ID for the resource. Ex -
+- description: 'Fully qualified resource ID for the resource. E.g.
 
-    /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}.'
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}".'
   name: id
   types:
   - <xref:str>
@@ -68,14 +69,30 @@ variables:
   name: annotation
   types:
   - <xref:str>
-- description: IpPrefix contains the list of IP PrefixRules objects. Required.
+- description: The list of IP Prefix Rules.
   name: ip_prefix_rules
   types:
-  - <xref:list>[<xref:azure.mgmt.managednetworkfabric.models.IpPrefixPropertiesIpPrefixRulesItem>]
-- description: 'Gets the provisioning state of the resource. Known values are:
+  - <xref:list>[<xref:azure.mgmt.managednetworkfabric.models.IpPrefixRule>]
+- description: 'Configuration state of the resource. Known values are: "Succeeded",
 
-    "Succeeded", "Updating", "Canceled", "Deleting", and "Failed".'
+    "Failed", "Rejected", "Accepted", "Provisioned", "ErrorProvisioning", "Deprovisioning",
+
+    "Deprovisioned", "ErrorDeprovisioning", and "DeferredControl".'
+  name: configuration_state
+  types:
+  - <xref:str>
+  - <xref:azure.mgmt.managednetworkfabric.models.ConfigurationState>
+- description: 'Provisioning state of the resource. Known values are: "Accepted",
+
+    "Succeeded", "Updating", "Deleting", "Failed", and "Canceled".'
   name: provisioning_state
   types:
   - <xref:str>
   - <xref:azure.mgmt.managednetworkfabric.models.ProvisioningState>
+- description: 'Administrative state of the resource. Known values are: "Enabled",
+
+    "Disabled", "MAT", and "RMA".'
+  name: administrative_state
+  types:
+  - <xref:str>
+  - <xref:azure.mgmt.managednetworkfabric.models.AdministrativeState>
